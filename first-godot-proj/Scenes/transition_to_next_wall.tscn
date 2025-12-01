@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://pns3a4vfsgd1"]
+
+[ext_resource type="Script" uid="uid://caf1wuy4wenmv" path="res://Scripts/transition_to_next_wall.gd" id="1_2luyx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4gya"]
+size = Vector2(76, 102)
+
+[node name="TransitionToNextWall" type="Area2D"]
+script = ExtResource("1_2luyx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w4gya")

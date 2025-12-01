@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdfwii4l64gjt"]
+
+[ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="1_xghsi"]
+[ext_resource type="PackedScene" uid="uid://berc3hhieytfn" path="res://Scenes/platform.tscn" id="2_ew77b"]
+[ext_resource type="PackedScene" uid="uid://pns3a4vfsgd1" path="res://Scenes/transition_to_next_wall.tscn" id="3_ew77b"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
+distance = -185.0
+
+[node name="Wall1" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-641, 383.58264)
+scale = Vector2(28.389328, 34.749096)
+color = Color(0.21568628, 0.6784314, 1, 1)
+polygon = PackedVector2Array(0, -21.283506, 45.228264, -21.39862, 45.228264, -11.242298, 45.228264, -0.76498795, 0, -0.6498781)
+
+[node name="Player" parent="." instance=ExtResource("1_xghsi")]
+position = Vector2(12, 54)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-12, -54)
+position_smoothing_enabled = true
+
+[node name="Platform" parent="." instance=ExtResource("2_ew77b")]
+position = Vector2(63, 174)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(63, 174)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_qxrlw")
+
+[node name="TransitionToNextWall" parent="." instance=ExtResource("3_ew77b")]
+position = Vector2(601, 310)
