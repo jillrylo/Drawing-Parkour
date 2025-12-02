@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdfwii4l64gjt"]
+[gd_scene load_steps=6 format=3 uid="uid://cdfwii4l64gjt"]
 
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="1_xghsi"]
 [ext_resource type="PackedScene" uid="uid://berc3hhieytfn" path="res://Scenes/platform.tscn" id="2_ew77b"]
 [ext_resource type="PackedScene" uid="uid://pns3a4vfsgd1" path="res://Scenes/transition_to_next_wall.tscn" id="3_ew77b"]
+[ext_resource type="Texture2D" uid="uid://dkhxcqqg873dh" path="res://Assets/TreesAndFlowers/Tree1.PNG" id="4_p5cmx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 distance = -185.0
@@ -33,3 +34,8 @@ shape = SubResource("WorldBoundaryShape2D_qxrlw")
 
 [node name="TransitionToNextWall" parent="." instance=ExtResource("3_ew77b")]
 position = Vector2(601, 310)
+
+[node name="Tree1" type="Sprite2D" parent="."]
+position = Vector2(-498.00003, 217.99997)
+scale = Vector2(0.1917683, 0.19176833)
+texture = ExtResource("4_p5cmx")
