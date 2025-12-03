@@ -1,0 +1,113 @@
+[gd_scene load_steps=15 format=3 uid="uid://dyunyi7lcxwm4"]
+
+[ext_resource type="Texture2D" uid="uid://nkdmb25biy8o" path="res://Assets/StartScreenTree/StartTree1.PNG" id="4_qg82j"]
+[ext_resource type="Texture2D" uid="uid://psmvuhtlacaj" path="res://Assets/StartScreenTree/StartTree2.PNG" id="5_2sbhq"]
+[ext_resource type="Texture2D" uid="uid://diswsblqucnog" path="res://Assets/StartScreenTree/StartTree3.PNG" id="6_i3sa8"]
+[ext_resource type="Texture2D" uid="uid://2mg3kqm7d1sb" path="res://Assets/StartScreenTree/StartTree4.PNG" id="7_7ive4"]
+[ext_resource type="Texture2D" uid="uid://bn2we1rsm055w" path="res://Assets/StartScreenTree/StartTree5.PNG" id="8_kr8ks"]
+[ext_resource type="Texture2D" uid="uid://c8cs06t77jfdo" path="res://Assets/StartScreenTree/StartTree6.PNG" id="9_pmwbl"]
+[ext_resource type="Texture2D" uid="uid://cjqllgacbqh0w" path="res://Assets/StartScreenTree/StartTree7.PNG" id="10_2n7fw"]
+[ext_resource type="Texture2D" uid="uid://bi8l8ytu6765i" path="res://Assets/StartScreenTree/StartTree8.PNG" id="11_es5ds"]
+[ext_resource type="Script" uid="uid://bn3efugavks2c" path="res://Scenes/start_button.gd" id="12_2sbhq"]
+[ext_resource type="Texture2D" uid="uid://pjjdnsmp41nj" path="res://Assets/StartScreenTree/StartTree9.PNG" id="12_45r57"]
+[ext_resource type="Texture2D" uid="uid://djdauwhvfst64" path="res://Assets/Buttons/StartPressedFORNOW.png" id="12_qg82j"]
+[ext_resource type="Texture2D" uid="uid://beixbvppuh6o5" path="res://Assets/Buttons/StartButton.png" id="13_2sbhq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
+distance = -635.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c632w"]
+animations = [{
+"frames": [{
+"duration": 1.41,
+"texture": ExtResource("4_qg82j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2sbhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i3sa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7ive4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kr8ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pmwbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2n7fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_es5ds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_45r57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_es5ds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2n7fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pmwbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kr8ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7ive4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i3sa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2sbhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qg82j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="StartScreen" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1303.0
+offset_top = -665.0
+offset_right = 1306.0
+offset_bottom = 808.0
+color = Color(0.6392157, 0.8352941, 1, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(63, 173)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_qxrlw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-303, 364)
+scale = Vector2(0.8323172, 0.83231705)
+sprite_frames = SubResource("SpriteFrames_c632w")
+autoplay = "default"
+frame_progress = 0.0005882504
+
+[node name="StartButton" type="TextureButton" parent="."]
+offset_left = -863.0
+offset_top = 303.0
+offset_right = -653.0
+offset_bottom = 503.0
+texture_normal = ExtResource("13_2sbhq")
+texture_pressed = ExtResource("12_qg82j")
+script = ExtResource("12_2sbhq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.49, 0.49)
+drag_vertical_offset = 1.0
+
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]

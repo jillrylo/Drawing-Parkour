@@ -23,6 +23,7 @@ script = ExtResource("1_onrkg")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
 position = Vector2(4.0000043, -12.951233)
 scale = Vector2(0.086585365, 0.08658537)
 sprite_frames = SubResource("SpriteFrames_my0ql")
