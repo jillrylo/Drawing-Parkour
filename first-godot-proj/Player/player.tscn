@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dupbj03k0vldf"]
 
 [ext_resource type="Texture2D" uid="uid://cvxuk8wl2fxp" path="res://Player/Girl_player_1.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://dp10ltjbirfsx" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://dp10ltjbirfsx" path="res://Scripts/player.gd" id="1_onrkg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_my0ql"]
 animations = [{
