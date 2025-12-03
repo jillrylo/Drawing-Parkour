@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://biwty7bs8fiei"
+path="res://.godot/imported/ES_Kanji - Aerian.mp3-bbbdbd691b1e5212e8bb5d654b7bae49.mp3str"
+
+[deps]
+
+source_file="res://Sound/ES_Kanji - Aerian.mp3"
+dest_files=["res://.godot/imported/ES_Kanji - Aerian.mp3-bbbdbd691b1e5212e8bb5d654b7bae49.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
