@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://x8xh8vxi1kdp"
+path="res://.godot/imported/ES_Maiden Voyage - Helmut Schenker.mp3-cdf3e4c13769466bfeec501893e2ce60.mp3str"
+
+[deps]
+
+source_file="res://Sound/ES_Maiden Voyage - Helmut Schenker.mp3"
+dest_files=["res://.godot/imported/ES_Maiden Voyage - Helmut Schenker.mp3-cdf3e4c13769466bfeec501893e2ce60.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
