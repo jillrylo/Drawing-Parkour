@@ -1,15 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdfwii4l64gjt"]
+[gd_scene load_steps=10 format=3 uid="uid://cdfwii4l64gjt"]
 
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="1_xghsi"]
-[ext_resource type="PackedScene" uid="uid://berc3hhieytfn" path="res://Scenes/platform.tscn" id="2_ew77b"]
 [ext_resource type="PackedScene" uid="uid://pns3a4vfsgd1" path="res://Scenes/transition_to_next_wall.tscn" id="3_ew77b"]
 [ext_resource type="Texture2D" uid="uid://dhkl4tvmq38th" path="res://Assets/TreesAndFlowers/Tree1Leaves.png" id="4_ub6k7"]
 [ext_resource type="Texture2D" uid="uid://b5y2yi4ur3f48" path="res://Assets/TreesAndFlowers/Tree1BranchesandTrunk.png" id="5_81nt5"]
 [ext_resource type="Texture2D" uid="uid://c0iwni4hs268n" path="res://Assets/TreesAndFlowers/flower1.PNG" id="6_iwffm"]
 [ext_resource type="Texture2D" uid="uid://bs3ajq776nju1" path="res://Assets/TreesAndFlowers/flower3.PNG" id="7_1xoxf"]
+[ext_resource type="PackedScene" uid="uid://blbcv5qepupo" path="res://Assets/DresserModel1.glb" id="7_iwffm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 distance = -542.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwffm"]
+size = Vector2(319.5, 292.5)
 
 [node name="Wall1" type="Node2D"]
 
@@ -21,19 +24,16 @@ offset_bottom = 714.0
 color = Color(0.6392157, 0.8352941, 1, 1)
 
 [node name="Tree1Leaves" type="Sprite2D" parent="."]
-position = Vector2(-943.49994, 569.68896)
-scale = Vector2(0.18871945, 0.18871948)
+position = Vector2(-585, 310)
+scale = Vector2(0.39291155, 0.3626525)
 texture = ExtResource("4_ub6k7")
 
 [node name="Player" parent="." instance=ExtResource("1_xghsi")]
-position = Vector2(-1120, 417)
+position = Vector2(-1146, 344)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(490, -54)
+position = Vector2(520.215, 3.205)
 position_smoothing_enabled = true
-
-[node name="Platform" parent="." instance=ExtResource("2_ew77b")]
-position = Vector2(-1129, 529)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(63, 173)
@@ -45,8 +45,8 @@ shape = SubResource("WorldBoundaryShape2D_qxrlw")
 position = Vector2(1235, 666)
 
 [node name="Tree1BranchesandTrunk" type="Sprite2D" parent="."]
-position = Vector2(-947.5, 572.6891)
-scale = Vector2(0.18719512, 0.1871951)
+position = Vector2(-623, 379)
+scale = Vector2(0.4487805, 0.4487805)
 texture = ExtResource("5_81nt5")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Tree1BranchesandTrunk"]
@@ -60,11 +60,39 @@ polygon = PackedVector2Array(-15.643799, 15.644043, -13.036133, 64.19678, -44.32
 one_way_collision = true
 
 [node name="Flower1" type="Sprite2D" parent="."]
-position = Vector2(-914.00006, 673.00006)
-scale = Vector2(0.052896284, 0.052896295)
+position = Vector2(-707, 623)
+scale = Vector2(0.1251143, 0.12511434)
 texture = ExtResource("6_iwffm")
 
 [node name="Flower3" type="Sprite2D" parent="."]
-position = Vector2(-987.00006, 678)
-scale = Vector2(0.043292735, 0.043292735)
+position = Vector2(-555, 638)
+scale = Vector2(0.09054881, 0.09054881)
 texture = ExtResource("7_1xoxf")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+z_index = 1
+offset_left = -1335.0
+offset_top = 206.0
+offset_right = -769.0
+offset_bottom = 772.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(566, 566)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.027014434, 0, 0.9996351, 0, 1, 0, -0.9996351, 0, -0.027014434, 213.60039, 95.69426, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 50.078613, 78.405655, -16.6717)
+
+[node name="DresserModel1" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_iwffm")]
+
+[node name="DresserCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DresserCollision"]
+position = Vector2(-1040.75, 534.25)
+shape = SubResource("RectangleShape2D_iwffm")
