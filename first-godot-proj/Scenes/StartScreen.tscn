@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyunyi7lcxwm4"]
+[gd_scene load_steps=17 format=3 uid="uid://dyunyi7lcxwm4"]
 
 [ext_resource type="Texture2D" uid="uid://nkdmb25biy8o" path="res://Assets/StartScreenTree/StartTree1.PNG" id="4_qg82j"]
 [ext_resource type="Texture2D" uid="uid://psmvuhtlacaj" path="res://Assets/StartScreenTree/StartTree2.PNG" id="5_2sbhq"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://pjjdnsmp41nj" path="res://Assets/StartScreenTree/StartTree9.PNG" id="12_45r57"]
 [ext_resource type="Texture2D" uid="uid://djdauwhvfst64" path="res://Assets/Buttons/StartPressedFORNOW.png" id="12_qg82j"]
 [ext_resource type="Texture2D" uid="uid://beixbvppuh6o5" path="res://Assets/Buttons/StartButton.png" id="13_2sbhq"]
+[ext_resource type="Texture2D" uid="uid://0rdcy4fdcg48" path="res://Assets/Clouds/Cloud1.PNG" id="13_i3sa8"]
+[ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="14_i3sa8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 distance = -635.0
@@ -117,7 +119,25 @@ texture_pressed = ExtResource("12_qg82j")
 script = ExtResource("12_2sbhq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.49, 0.49)
+position = Vector2(-352.775, 135.815)
+zoom = Vector2(0.675, 0.61)
 drag_vertical_offset = 1.0
+
+[node name="Cloud1" type="Sprite2D" parent="."]
+position = Vector2(265, -181)
+scale = Vector2(0.27635548, 0.27635548)
+texture = ExtResource("13_i3sa8")
+
+[node name="Cloud2Maybe" type="Sprite2D" parent="."]
+position = Vector2(-960.00006, -299.00003)
+rotation = -0.36651915
+scale = Vector2(0.2915743, 0.29157427)
+texture = ExtResource("14_i3sa8")
+
+[node name="Cloud2" type="Sprite2D" parent="."]
+position = Vector2(-302.00006, -275.00003)
+rotation = 5.9777527
+scale = Vector2(0.2816222, 0.28162223)
+texture = ExtResource("13_i3sa8")
 
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
