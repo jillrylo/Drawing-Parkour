@@ -73,6 +73,16 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 9.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [node name="StartScreen" type="Node2D"]
@@ -94,8 +104,8 @@ shape = SubResource("WorldBoundaryShape2D_qxrlw")
 position = Vector2(-303, 364)
 scale = Vector2(0.8323172, 0.83231705)
 sprite_frames = SubResource("SpriteFrames_c632w")
+animation = &"jump"
 autoplay = "default"
-frame_progress = 0.0005882504
 
 [node name="StartButton" type="TextureButton" parent="."]
 offset_left = -863.0
