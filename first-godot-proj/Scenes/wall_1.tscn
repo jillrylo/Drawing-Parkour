@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cdfwii4l64gjt"]
 
-[ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="1_xghsi"]
+[ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Sound/Player/player.tscn" id="1_xghsi"]
 [ext_resource type="PackedScene" uid="uid://pns3a4vfsgd1" path="res://Scenes/transition_to_next_wall.tscn" id="3_ew77b"]
 [ext_resource type="Texture2D" uid="uid://dhkl4tvmq38th" path="res://Assets/TreesAndFlowers/Tree1Leaves.png" id="4_ub6k7"]
 [ext_resource type="Texture2D" uid="uid://b5y2yi4ur3f48" path="res://Assets/TreesAndFlowers/Tree1BranchesandTrunk.png" id="5_81nt5"]
