@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dupbj03k0vldf"]
+[gd_scene load_steps=17 format=3 uid="uid://dupbj03k0vldf"]
 
-[ext_resource type="Texture2D" uid="uid://cvxuk8wl2fxp" path="res://Sound/Player/Girl_player_1.png" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://cvxuk8wl2fxp" path="res://Player/Girl_player_1.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dp10ltjbirfsx" path="res://Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dlu4upttx7g3c" path="res://Assets/walk cycle/walk 1.png" id="3_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://dj378odw6gxbt" path="res://Assets/walk cycle/walk 2.png" id="4_apopc"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cyq5tf4m86si4" path="res://Assets/walk cycle/Walk 6.png" id="8_dkpta"]
 [ext_resource type="Texture2D" uid="uid://bw0p8qmcoa1cm" path="res://Assets/walk cycle/Walk 7.png" id="9_lfmf2"]
 [ext_resource type="Texture2D" uid="uid://cogm1nolrrevq" path="res://Assets/walk cycle/Walk 8.png" id="10_pisgm"]
+[ext_resource type="Script" uid="uid://dvvng710hd6gu" path="res://Scripts/player_interactions.gd" id="11_5htga"]
+[ext_resource type="Script" uid="uid://u1kc1t0rklx" path="res://Scripts/camera_2d.gd" id="12_p5o4e"]
+[ext_resource type="Script" uid="uid://ci5onq8ppxxpm" path="res://Scripts/camera_limit_manager.gd" id="13_p5o4e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_my0ql"]
 animations = [{
@@ -48,12 +51,15 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 2.0
+"speed": 3.5
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4lxus"]
 radius = 9.0
 height = 98.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu6f8"]
+size = Vector2(43, 100)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
@@ -64,7 +70,23 @@ z_index = 5
 position = Vector2(4.0000043, -12.951233)
 scale = Vector2(0.086585365, 0.08658537)
 sprite_frames = SubResource("SpriteFrames_my0ql")
-animation = &"walk"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4lxus")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("11_5htga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_gu6f8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("12_p5o4e")
+
+[node name="CameraLimitManager" type="Node2D" parent="Camera2D"]
+script = ExtResource("13_p5o4e")
+limit_transition_speed = null
+
+[connection signal="area_entered" from="InteractionArea" to="InteractionArea" method="_on_area_entered"]

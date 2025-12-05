@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvxuk8wl2fxp"
-path="res://.godot/imported/Girl_player_1.png-c0501a542ed32aa13ec64377b7c7a0e7.ctex"
+path="res://.godot/imported/Girl_player_1.png-9e35222a6a8b442b2d5328472a2f197c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sound/Player/Girl_player_1.png"
-dest_files=["res://.godot/imported/Girl_player_1.png-c0501a542ed32aa13ec64377b7c7a0e7.ctex"]
+source_file="res://Player/Girl_player_1.png"
+dest_files=["res://.godot/imported/Girl_player_1.png-9e35222a6a8b442b2d5328472a2f197c.ctex"]
 
 [params]
 
