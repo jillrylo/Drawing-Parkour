@@ -5,7 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -800.0
 
 @onready var _animated_sprite = $AnimatedSprite2D
-@onready var camera_limit_manager: Camera = $Camera
+@onready var camera: Camera = $Camera
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -27,16 +27,14 @@ func _physics_process(delta: float) -> void:
 		if velocity.y < 0:
 			_animated_sprite.play("jump")
 		else:
-			_animated_sprite.play("idle")
+			_animated_sprite.stop()
 			
 	elif direction !=0: 
 		_animated_sprite.play("walk")
 		_animated_sprite.flip_h = direction < 0
 	else:
-		_animated_sprite.play("idle")
+		_animated_sprite.stop()
 
 
 	move_and_slide()
 	
-func _ready():
-	camera_limit_manager.player = self
