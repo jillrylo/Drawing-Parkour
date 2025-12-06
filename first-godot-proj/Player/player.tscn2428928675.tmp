@@ -19,8 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://dc1m0vkl5ytjp" path="res://Assets/jump cycle/Jump 8.png" id="10_efx54"]
 [ext_resource type="Texture2D" uid="uid://bpgse07lmcy53" path="res://Assets/walk cycle/Walk 8.png" id="10_n471f"]
 [ext_resource type="Script" uid="uid://dvvng710hd6gu" path="res://Scripts/player_interactions.gd" id="11_5htga"]
+[ext_resource type="Script" uid="uid://u1kc1t0rklx" path="res://Scripts/camera_2d.gd" id="12_p5o4e"]
 [ext_resource type="Script" uid="uid://ci5onq8ppxxpm" path="res://Scripts/camera_limit_manager.gd" id="13_p5o4e"]
-[ext_resource type="PackedScene" uid="uid://cbpo60fx6q8kc" path="res://Scenes/camera.tscn" id="20_7emwf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_my0ql"]
 animations = [{
@@ -108,8 +108,8 @@ z_index = 5
 position = Vector2(-9.536743e-07, -0.5479505)
 scale = Vector2(0.36893204, 0.3689321)
 sprite_frames = SubResource("SpriteFrames_my0ql")
-animation = &"jump"
-frame_progress = 0.70930606
+animation = &"idle"
+frame_progress = 0.6212736
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4lxus")
@@ -121,9 +121,10 @@ script = ExtResource("11_5htga")
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_gu6f8")
 
-[node name="Camera" parent="." instance=ExtResource("20_7emwf")]
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("12_p5o4e")
 
-[node name="CameraLimitManager" type="Node2D" parent="Camera"]
+[node name="CameraLimitManager" type="Node2D" parent="Camera2D"]
 script = ExtResource("13_p5o4e")
 
 [connection signal="area_entered" from="InteractionArea" to="InteractionArea" method="_on_area_entered"]
