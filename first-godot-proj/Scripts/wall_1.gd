@@ -5,4 +5,4 @@ extends Node2D
 
 func _ready():
 	player.camera.camera_limit_manager.set_limiter(initial_camera_limiter, true)
-	
+	$AnimationPlayer.play("moving_cloud")

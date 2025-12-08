@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdfwii4l64gjt"]
+[gd_scene load_steps=20 format=3 uid="uid://cdfwii4l64gjt"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_pmwcp"]
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="1_xghsi"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://blbcv5qepupo" path="res://Assets/DresserModel1.glb" id="7_iwffm"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="8_1xoxf"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="10_w4dla"]
+[ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="11_w4dla"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 distance = -542.0
@@ -20,14 +21,82 @@ size = Vector2(319.5, 292.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xoxf"]
 size = Vector2(70, 1380)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4dla"]
+size = Vector2(198, 95.5)
+
+[sub_resource type="Animation" id="Animation_w4dla"]
+resource_name = "moving_cloud"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovingCloud1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-29, 221), Vector2(-29, -186)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MovingCloud2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(317, -186), Vector2(317, 221)]
+}
+
+[sub_resource type="Animation" id="Animation_76c2s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovingCloud1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 23)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MovingCloud2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(317, -186)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3lsls"]
+_data = {
+&"RESET": SubResource("Animation_76c2s"),
+&"moving_cloud": SubResource("Animation_w4dla")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76c2s"]
+size = Vector2(860, 140.5)
+
 [node name="Wall1" type="Node2D"]
 script = ExtResource("1_pmwcp")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1272.0
-offset_top = -665.0
-offset_right = 1277.0
-offset_bottom = 714.0
+offset_left = -1127.0
+offset_top = -660.0
+offset_right = 1422.0
+offset_bottom = 719.0
 color = Color(0.6392157, 0.8352941, 1, 1)
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect"]
@@ -64,9 +133,9 @@ position = Vector2(2654.9836, -1175.2443)
 scale = Vector2(5.342019, 5.3420196)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree1BranchesandTrunk/StaticBody2D2"]
-position = Vector2(-498.00003, 217.99997)
+position = Vector2(-497.8343, 219.16576)
 scale = Vector2(0.1917683, 0.19176833)
-polygon = PackedVector2Array(-15.643799, 15.644043, -13.036133, 64.19678, -44.32422, 69.41138, -86.041016, 69.41138, -161.65332, -31.287598, -255.5166, -125.15088, -302.44824, -161.65326, -354.59448, -234.65796, -354.59448, -203.37024, -323.30664, -156.4386, -276.375, -109.50696, -234.65796, -67.79004, -224.22876, -57.360718, -265.9458, -57.360718, -302.44824, -57.360718, -338.95044, -52.14612, -375.45288, -52.14612, -417.16992, -57.360718, -422.38452, -46.93152, -396.31152, -36.502197, -365.02368, -31.287598, -333.73584, -36.502197, -312.87744, -36.502197, -292.01904, -36.502197, -260.7312, -36.502197, -229.44336, -26.072998, -182.51172, -5.2144775, -166.86792, 0.00012207031, -99.07788, 88.6488, -83.43384, 125.15112, -57.36084, 177.29736, -36.502197, 208.58508, -31.287598, 219.0144, -73.00464, 693.5453, -83.43384, 703.9745, -83.43384, 730.0476, -67.79004, 745.6915, -26.072998, 750.9061, 15.644043, 750.9061, 46.93164, 735.2622, 62.575684, 709.1891, 62.575684, 693.5453, 46.93164, 271.16064, 104.292725, 203.37048, 130.36572, 187.72668, 166.86816, 146.00964, 182.51196, 146.00964, 265.94604, 57.360962, 354.59473, -5.2144775, 411.95557, -57.360718, 479.7456, -125.15088, 479.7456, -151.224, 464.1018, -151.224, 250.30225, 36.502563, 245.08746, 41.71704, 239.87286, 41.71704, 234.6582, 46.93164, 229.4436, 46.93164, 224.22894, 52.14624, 219.01434, 57.36084, 213.7998, 62.575684, 46.93164, 219.0144, 26.073242, -224.22876, 78.21948, -286.80426, 109.507324, -312.87738, 114.721924, -323.30658, 99.078125, -328.52124, 26.073242, -276.375, 15.644043, -458.88684, 5.2148438, -495.38922, -5.2145996, -458.88684)
+polygon = PackedVector2Array(-15.643799, 15.644043, -13.036133, 64.19678, -44.32422, 69.41138, -86.041016, 69.41138, -140.5188, -39.59839, -247.09973, -135.30377, -314.52856, -224.48376, -355.85596, -226.65887, -353.6808, -185.33154, -323.30664, -156.4386, -276.375, -109.50696, -234.65796, -67.79004, -224.22876, -57.360718, -265.9458, -57.360718, -302.44824, -57.360718, -338.95044, -52.14612, -375.45288, -52.14612, -417.16992, -57.360718, -422.38452, -46.93152, -396.31152, -36.502197, -365.02368, -31.287598, -333.73584, -36.502197, -312.87744, -36.502197, -292.01904, -36.502197, -260.7312, -36.502197, -229.44336, -26.072998, -182.51172, -5.2144775, -166.86792, 0.00012207031, -99.07788, 88.6488, -83.43384, 125.15112, -57.36084, 177.29736, -36.502197, 208.58508, -31.287598, 219.0144, -73.00464, 693.5453, -83.43384, 703.9745, -83.43384, 730.0476, -67.79004, 745.6915, -26.072998, 750.9061, 15.644043, 750.9061, 46.93164, 735.2622, 62.575684, 709.1891, 62.575684, 693.5453, 46.93164, 271.16064, 104.292725, 203.37048, 130.36572, 187.72668, 166.86816, 146.00964, 182.51196, 146.00964, 265.94604, 57.360962, 354.59473, -5.2144775, 411.95557, -57.360718, 506.80353, -121.80682, 515.504, -150.08344, 464.1018, -151.224, 250.30225, 36.502563, 245.08746, 41.71704, 247.96399, -47.85266, 295.81665, -160.95905, 289.29126, -171.83466, 274.06543, -167.48438, 208.81177, -26.10144, 213.7998, 62.575684, 46.93164, 219.0144, 26.073242, -224.22876, 78.21948, -286.80426, 109.507324, -312.87738, 114.721924, -323.30658, 99.078125, -328.52124, 26.073242, -276.375, 20.440308, -450.69644, 7.3895264, -476.7979, -1.3109131, -455.0467)
 one_way_collision = true
 
 [node name="Flower1" type="Sprite2D" parent="."]
@@ -108,8 +177,20 @@ position = Vector2(-1040.75, 534.25)
 shape = SubResource("RectangleShape2D_iwffm")
 
 [node name="Cloud2Maybe" type="Sprite2D" parent="."]
-position = Vector2(-233, -34.000004)
-scale = Vector2(0.3758315, 0.37583148)
+position = Vector2(-842.99994, -176)
+scale = Vector2(0.32102504, 0.33231705)
+texture = ExtResource("8_1xoxf")
+
+[node name="Cloud2Maybe" type="Sprite2D" parent="Cloud2Maybe"]
+position = Vector2(2161.8247, -36.11008)
+rotation = -0.25307274
+scale = Vector2(0.72771716, 0.75331444)
+texture = ExtResource("8_1xoxf")
+
+[node name="Cloud2Maybe" type="Sprite2D" parent="Cloud2Maybe/Cloud2Maybe"]
+position = Vector2(-1100.4764, -1405.4565)
+rotation = 0.1134464
+scale = Vector2(0.72771716, 0.75331444)
 texture = ExtResource("8_1xoxf")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -148,6 +229,77 @@ position = Vector2(-1059, -296)
 
 [node name="LimitPosition" parent="CameraLimiters/CameraLimiter2" index="1"]
 position = Vector2(-1057, 2)
+
+[node name="Bird3" type="Sprite2D" parent="."]
+position = Vector2(35.999996, 431.8322)
+scale = Vector2(0.094909936, 0.082061194)
+texture = ExtResource("11_w4dla")
+flip_h = true
+
+[node name="Bird2" type="Sprite2D" parent="."]
+position = Vector2(-105, 470)
+scale = Vector2(0.13356346, 0.11884079)
+texture = ExtResource("11_w4dla")
+flip_h = true
+
+[node name="Bird" type="Sprite2D" parent="."]
+position = Vector2(-73, 374)
+scale = Vector2(0.23963414, 0.23963416)
+texture = ExtResource("11_w4dla")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bird"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bird/StaticBody2D"]
+polygon = PackedVector2Array(0, 0, -87.633575, -29.211182, -150.229, -95.979614, -212.8244, -83.46057, -308.80408, -125.190796, -383.91858, -183.61316, -429.8219, -250.38159, -471.5522, -321.32312, -521.6285, -421.4757, -467.37915, -425.6488, -350.53436, -367.22644, -262.90076, -287.93884, -254.55469, -304.63098, -250.38165, -404.7837, -229.51654, -446.51392, -183.61322, -467.37903, -191.95929, -513.28235, -158.57507, -484.07117, -146.05597, -521.6284, -121.01782, -492.41724, -41.730286, -484.07117, 16.692108, -450.687, 58.422394, -396.43762, 58.422394, -317.15002, 66.76845, -300.458, 62.595413, -275.4198, 112.67175, -300.458, 200.30534, -379.74548, 296.28497, -396.43762, 417.3028, -413.12976, 446.51398, -425.6488, 492.4173, -425.6488, 425.64886, -321.32312, 392.26465, -254.55469, 312.9771, -166.92114, 229.51654, -104.32568, 200.30534, -87.633545, 296.28497, -41.730225, 325.4962, -4.1729736, 312.9771, 20.865112, 287.93893, 33.384277, 258.72772, 45.90332, 221.17049, 62.59546, 137.70993, -12.519043)
+
+[node name="MovingCloud1" type="AnimatableBody2D" parent="."]
+position = Vector2(7, 23)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingCloud1"]
+position = Vector2(265, 276)
+scale = Vector2(0.13636369, 0.13636367)
+texture = ExtResource("8_1xoxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCloud1"]
+position = Vector2(266, 277.25)
+shape = SubResource("RectangleShape2D_w4dla")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3lsls")
+}
+
+[node name="MovingCloud2" type="AnimatableBody2D" parent="."]
+position = Vector2(317, -186)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingCloud2"]
+position = Vector2(265, 276)
+scale = Vector2(0.13636369, 0.13636367)
+texture = ExtResource("8_1xoxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCloud2"]
+position = Vector2(266, 277.25)
+shape = SubResource("RectangleShape2D_w4dla")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 773.0
+offset_top = -152.0
+offset_right = 1593.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 136
+text = "SHELF LONG"
+horizontal_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Label"]
+position = Vector2(10, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label/StaticBody2D"]
+position = Vector2(421, 102)
+shape = SubResource("RectangleShape2D_76c2s")
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
