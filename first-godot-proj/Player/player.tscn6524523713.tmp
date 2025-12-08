@@ -109,8 +109,7 @@ position = Vector2(-9.536743e-07, -0.5479505)
 scale = Vector2(0.36893204, 0.3689321)
 sprite_frames = SubResource("SpriteFrames_my0ql")
 animation = &"jump"
-frame = 4
-frame_progress = 0.6568771
+frame_progress = 0.7638102
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4lxus")
@@ -124,8 +123,8 @@ shape = SubResource("RectangleShape2D_gu6f8")
 
 [node name="Camera" parent="." instance=ExtResource("20_7emwf")]
 
-[node name="CameraLimitManager" type="Node2D" parent="Camera" node_paths=PackedStringArray("camera")]
+[node name="CameraLimitManager" type="Node2D" parent="Camera"]
 script = ExtResource("13_p5o4e")
-camera = NodePath("..")
+limit_transition_speed = null
 
 [connection signal="area_entered" from="InteractionArea" to="InteractionArea" method="_on_area_entered"]
