@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/bunny-hop-andrey-rossi-main-version-30994-02-
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

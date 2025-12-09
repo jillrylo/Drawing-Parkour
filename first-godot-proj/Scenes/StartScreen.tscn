@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dyunyi7lcxwm4"]
+[gd_scene load_steps=23 format=3 uid="uid://dyunyi7lcxwm4"]
 
 [ext_resource type="Texture2D" uid="uid://nkdmb25biy8o" path="res://Assets/StartScreenTree/StartTree1.PNG" id="4_qg82j"]
 [ext_resource type="Texture2D" uid="uid://psmvuhtlacaj" path="res://Assets/StartScreenTree/StartTree2.PNG" id="5_2sbhq"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dixrgu02jy3ml" path="res://Assets/Text/AandDforLEFTandRIGHT.PNG" id="16_2n7fw"]
 [ext_resource type="Texture2D" uid="uid://lsq87e6vu2x2" path="res://Assets/Text/SPACEBAR.PNG" id="17_es5ds"]
 [ext_resource type="Texture2D" uid="uid://c22rw2qjk1nna" path="res://Assets/Text/STICKERS.PNG" id="18_45r57"]
+[ext_resource type="AudioStream" uid="uid://bvvjnc6njaahc" path="res://Sound/bunny-hop-andrey-rossi-main-version-30994-02-09.mp3" id="20_45r57"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 distance = -635.0
@@ -165,5 +166,9 @@ texture = ExtResource("17_es5ds")
 position = Vector2(268.00003, 289.00003)
 scale = Vector2(0.32532752, 0.3253275)
 texture = ExtResource("18_45r57")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_45r57")
+autoplay = true
 
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]

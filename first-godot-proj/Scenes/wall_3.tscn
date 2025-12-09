@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c21xaksqqjmwv"]
+[gd_scene load_steps=24 format=3 uid="uid://c21xaksqqjmwv"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_2apbk"]
 [ext_resource type="Texture2D" uid="uid://bjcodcsmhdtcv" path="res://Assets/Furniture/ShelfWithBooks.png" id="2_eda4v"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c0iwni4hs268n" path="res://Assets/TreesAndFlowers/flower1.PNG" id="9_wg1e8"]
 [ext_resource type="Texture2D" uid="uid://bs3ajq776nju1" path="res://Assets/TreesAndFlowers/flower3.PNG" id="10_fdxbv"]
 [ext_resource type="Texture2D" uid="uid://c4paamtuwf0hu" path="res://Assets/animals/Untitled_Artwork-1 5.png" id="12_wg1e8"]
+[ext_resource type="AudioStream" uid="uid://bepd7a8s5fcro" path="res://Sound/boardwalk-jaunt-sky-toes-main-version-35005-02-28.mp3" id="13_fdxbv"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 5.0
@@ -281,6 +282,10 @@ position = Vector2(815.588, -6.3027344)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UntitledArtwork15/StaticBody2D"]
 position = Vector2(-409.05447, -881.7679)
 shape = SubResource("RectangleShape2D_wg1e8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_fdxbv")
+autoplay = true
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
