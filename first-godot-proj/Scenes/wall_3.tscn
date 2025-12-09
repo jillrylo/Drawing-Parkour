@@ -1,83 +1,45 @@
-[gd_scene load_steps=22 format=3 uid="uid://c21xaksqqjmwv"]
+[gd_scene load_steps=18 format=3 uid="uid://c21xaksqqjmwv"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_2apbk"]
-[ext_resource type="Texture2D" uid="uid://dhkl4tvmq38th" path="res://Assets/TreesAndFlowers/Tree1Leaves.png" id="2_wg1e8"]
+[ext_resource type="Texture2D" uid="uid://bjcodcsmhdtcv" path="res://Assets/Furniture/ShelfWithBooks.png" id="2_eda4v"]
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="3_fdxbv"]
-[ext_resource type="Texture2D" uid="uid://b5y2yi4ur3f48" path="res://Assets/TreesAndFlowers/Tree1BranchesandTrunk.png" id="4_kvf7g"]
-[ext_resource type="Texture2D" uid="uid://c0iwni4hs268n" path="res://Assets/TreesAndFlowers/flower1.PNG" id="5_40620"]
-[ext_resource type="Texture2D" uid="uid://bs3ajq776nju1" path="res://Assets/TreesAndFlowers/flower3.PNG" id="6_18yfi"]
-[ext_resource type="PackedScene" uid="uid://blbcv5qepupo" path="res://Assets/Furniture/DresserModel1.glb" id="7_vmvyg"]
+[ext_resource type="Texture2D" uid="uid://cj4i8qfqklsnm" path="res://Assets/Furniture/Floor.png" id="3_u887v"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="8_0cot6"]
+[ext_resource type="Texture2D" uid="uid://dtibnk780ocrd" path="res://Assets/TreesAndFlowers/Tree3.PNG" id="8_un04c"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="9_i6n5y"]
-[ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="10_owjur"]
 [ext_resource type="Script" uid="uid://jgt10brqxqfb" path="res://Scenes/wall_1_exit_right.gd" id="11_r6mmu"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
-distance = -542.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwffm"]
-size = Vector2(319.5, 292.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xoxf"]
-size = Vector2(70, 1380)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4dla"]
-size = Vector2(198, 95.5)
-
 [sub_resource type="Animation" id="Animation_76c2s"]
-length = 0.001
+length = 5.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MovingCloud1:position")
+tracks/0/path = NodePath("../MovingCloud1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(7, 23)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MovingCloud2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(317, -186)]
+"values": [Vector2(-1084, -352)]
 }
 
 [sub_resource type="Animation" id="Animation_w4dla"]
 resource_name = "moving_cloud"
-length = 3.0
+length = 8.5
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MovingCloud1:position")
+tracks/0/path = NodePath("../MovingCloud1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.5, 4, 4.5, 6.99, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-29, 221), Vector2(-29, -186)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MovingCloud2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(317, -186), Vector2(317, 221)]
+"values": [Vector2(-1084, -352), Vector2(-1084, -352), Vector2(-1084, 388), Vector2(-1084, 388), Vector2(-1084, -352), Vector2(-1084, -352)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3lsls"]
@@ -86,24 +48,40 @@ _data = {
 &"moving_cloud": SubResource("Animation_w4dla")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_76c2s"]
-size = Vector2(860, 140.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un04c"]
+size = Vector2(635.76263, 528.01556)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_386n5"]
-size = Vector2(95.14502, 215.89502)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65tcn"]
+size = Vector2(198, 95.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4gux"]
-size = Vector2(3859, 20)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
+distance = -542.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kgoq"]
+size = Vector2(73, 1388)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bxjy"]
+size = Vector2(87, 716)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lsls"]
+size = Vector2(97.57251, 215.89502)
 
 [node name="Wall1" type="Node2D"]
 script = ExtResource("1_2apbk")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_3lsls")
+}
+
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1127.0
-offset_top = -660.0
-offset_right = 1422.0
-offset_bottom = 719.0
+offset_left = -1199.0
+offset_top = -661.0
+offset_right = 1350.0
+offset_bottom = 718.0
 color = Color(0.6392157, 0.8352941, 1, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect"]
 layout_mode = 0
@@ -111,184 +89,21 @@ offset_left = -2544.0
 offset_right = 5.0
 offset_bottom = 1379.0
 color = Color(0.6392157, 0.8352941, 1, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect3" type="ColorRect" parent="."]
-offset_left = 4094.0
-offset_top = -674.0
-offset_right = 6643.0
-offset_bottom = 705.0
-color = Color(0.6392157, 0.8352941, 1, 1)
+[node name="Shelf2" type="Sprite2D" parent="."]
+position = Vector2(-1185.9999, -56)
+scale = Vector2(0.45308784, 0.29540232)
+texture = ExtResource("2_eda4v")
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect3"]
-layout_mode = 0
-offset_left = -2544.0
-offset_right = 5.0
-offset_bottom = 1379.0
-color = Color(0.6392157, 0.8352941, 1, 1)
+[node name="StaticBody2D" type="StaticBody2D" parent="Shelf2"]
 
-[node name="Tree1Leaves" type="Sprite2D" parent="."]
-position = Vector2(-585, 310)
-scale = Vector2(0.39291155, 0.3626525)
-texture = ExtResource("2_wg1e8")
-
-[node name="Player" parent="." instance=ExtResource("3_fdxbv")]
-position = Vector2(-1146, 344)
-
-[node name="FloorOfWorld" type="StaticBody2D" parent="."]
-position = Vector2(63, 173)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorOfWorld"]
-shape = SubResource("WorldBoundaryShape2D_qxrlw")
-
-[node name="Tree1BranchesandTrunk" type="Sprite2D" parent="."]
-position = Vector2(-623, 379)
-scale = Vector2(0.4487805, 0.4487805)
-texture = ExtResource("4_kvf7g")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Tree1BranchesandTrunk"]
-position = Vector2(2654.9836, -1175.2443)
-scale = Vector2(5.342019, 5.3420196)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree1BranchesandTrunk/StaticBody2D2"]
-position = Vector2(-497.8343, 219.16576)
-scale = Vector2(0.1917683, 0.19176833)
-polygon = PackedVector2Array(-15.643799, 15.644043, -13.036133, 64.19678, -44.32422, 69.41138, -86.041016, 69.41138, -140.5188, -39.59839, -247.09973, -135.30377, -314.52856, -224.48376, -355.85596, -226.65887, -353.6808, -185.33154, -323.30664, -156.4386, -276.375, -109.50696, -234.65796, -67.79004, -224.22876, -57.360718, -265.9458, -57.360718, -302.44824, -57.360718, -338.95044, -52.14612, -375.45288, -52.14612, -417.16992, -57.360718, -422.38452, -46.93152, -396.31152, -36.502197, -365.02368, -31.287598, -333.73584, -36.502197, -312.87744, -36.502197, -292.01904, -36.502197, -260.7312, -36.502197, -229.44336, -26.072998, -182.51172, -5.2144775, -166.86792, 0.00012207031, -99.07788, 88.6488, -83.43384, 125.15112, -57.36084, 177.29736, -36.502197, 208.58508, -31.287598, 219.0144, -73.00464, 693.5453, -83.43384, 703.9745, -83.43384, 730.0476, -67.79004, 745.6915, -26.072998, 750.9061, 15.644043, 750.9061, 46.93164, 735.2622, 62.575684, 709.1891, 62.575684, 693.5453, 46.93164, 271.16064, 104.292725, 203.37048, 130.36572, 187.72668, 166.86816, 146.00964, 182.51196, 146.00964, 265.94604, 57.360962, 354.59473, -5.2144775, 411.95557, -57.360718, 506.80353, -121.80682, 515.504, -150.08344, 464.1018, -151.224, 250.30225, 36.502563, 245.08746, 41.71704, 247.96399, -47.85266, 295.81665, -160.95905, 289.29126, -171.83466, 274.06543, -167.48438, 208.81177, -26.10144, 213.7998, 62.575684, 46.93164, 219.0144, 26.073242, -224.22876, 78.21948, -286.80426, 109.507324, -312.87738, 114.721924, -323.30658, 99.078125, -328.52124, 26.073242, -276.375, 20.440308, -450.69644, 7.3895264, -476.7979, -1.3109131, -455.0467)
-one_way_collision = true
-
-[node name="Flower1" type="Sprite2D" parent="."]
-position = Vector2(-707, 623)
-scale = Vector2(0.1251143, 0.12511434)
-texture = ExtResource("5_40620")
-
-[node name="Flower3" type="Sprite2D" parent="."]
-position = Vector2(-555, 638)
-scale = Vector2(0.09054881, 0.09054881)
-texture = ExtResource("6_18yfi")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-z_index = 1
-offset_left = -1335.0
-offset_top = 206.0
-offset_right = -769.0
-offset_bottom = 772.0
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(566, 566)
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(-0.027014434, 0, 0.9996351, 0, 1, 0, -0.9996351, 0, -0.027014434, 213.60039, 95.69426, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 50.078613, 78.405655, -16.6717)
-
-[node name="DresserModel1" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_vmvyg")]
-
-[node name="DresserCollision" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DresserCollision"]
-position = Vector2(-1040.75, 534.25)
-shape = SubResource("RectangleShape2D_iwffm")
-
-[node name="Cloud2Maybe" type="Sprite2D" parent="."]
-position = Vector2(-842.99994, -176)
-scale = Vector2(0.32102504, 0.33231705)
-texture = ExtResource("8_0cot6")
-
-[node name="Cloud2Maybe" type="Sprite2D" parent="Cloud2Maybe"]
-position = Vector2(2161.8247, -36.11008)
-rotation = -0.25307274
-scale = Vector2(0.72771716, 0.75331444)
-texture = ExtResource("8_0cot6")
-
-[node name="Cloud2Maybe" type="Sprite2D" parent="Cloud2Maybe/Cloud2Maybe"]
-position = Vector2(-1100.4764, -1405.4565)
-rotation = 0.1134464
-scale = Vector2(0.72771716, 0.75331444)
-texture = ExtResource("8_0cot6")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-1237, 26)
-shape = SubResource("RectangleShape2D_1xoxf")
-disabled = true
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = -1274.0
-offset_top = -664.0
-offset_right = -1204.0
-offset_bottom = 719.0
-color = Color(0.8821442, 0.6458976, 0.47954023, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="."]
-offset_left = 3947.0
-offset_top = -675.0
-offset_right = 4017.0
-offset_bottom = 705.0
-color = Color(0.8821442, 0.6458976, 0.47954023, 1)
-
-[node name="CameraLimiters" type="Node2D" parent="."]
-
-[node name="CameraLimiter1" parent="CameraLimiters" instance=ExtResource("9_i6n5y")]
-position = Vector2(-217, 707)
-limit_x = 2
-limit_y = 2
-
-[node name="CollisionShape2D" parent="CameraLimiters/CameraLimiter1" index="0"]
-position = Vector2(1472, -314)
-
-[node name="LimitPosition" parent="CameraLimiters/CameraLimiter1" index="1"]
-position = Vector2(1496, 6)
-
-[node name="CameraLimiter2" parent="CameraLimiters" instance=ExtResource("9_i6n5y")]
-position = Vector2(-1274, 718)
-limit_x = 1
-
-[node name="CollisionShape2D" parent="CameraLimiters/CameraLimiter2" index="0"]
-position = Vector2(-1059, -296)
-
-[node name="LimitPosition" parent="CameraLimiters/CameraLimiter2" index="1"]
-position = Vector2(31, -4)
-
-[node name="CameraLimiter3" parent="CameraLimiters" instance=ExtResource("9_i6n5y")]
-position = Vector2(-1274, 718)
-limit_y = 2
-
-[node name="CollisionShape2D" parent="CameraLimiters/CameraLimiter3" index="0"]
-position = Vector2(-1059, -296)
-
-[node name="LimitPosition" parent="CameraLimiters/CameraLimiter3" index="1"]
-position = Vector2(2459, -1434)
-
-[node name="Bird3" type="Sprite2D" parent="."]
-position = Vector2(35.999996, 431.8322)
-scale = Vector2(0.094909936, 0.082061194)
-texture = ExtResource("10_owjur")
-flip_h = true
-
-[node name="Bird2" type="Sprite2D" parent="."]
-position = Vector2(-105, 470)
-scale = Vector2(0.13356346, 0.11884079)
-texture = ExtResource("10_owjur")
-flip_h = true
-
-[node name="Bird" type="Sprite2D" parent="."]
-position = Vector2(-73, 374)
-scale = Vector2(0.23963414, 0.23963416)
-texture = ExtResource("10_owjur")
-flip_h = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Bird"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bird/StaticBody2D"]
-polygon = PackedVector2Array(0, 0, -87.633575, -29.211182, -150.229, -95.979614, -212.8244, -83.46057, -308.80408, -125.190796, -383.91858, -183.61316, -429.8219, -250.38159, -471.5522, -321.32312, -521.6285, -421.4757, -467.37915, -425.6488, -350.53436, -367.22644, -262.90076, -287.93884, -254.55469, -304.63098, -250.38165, -404.7837, -229.51654, -446.51392, -183.61322, -467.37903, -191.95929, -513.28235, -158.57507, -484.07117, -146.05597, -521.6284, -121.01782, -492.41724, -41.730286, -484.07117, 16.692108, -450.687, 58.422394, -396.43762, 58.422394, -317.15002, 66.76845, -300.458, 62.595413, -275.4198, 112.67175, -300.458, 200.30534, -379.74548, 296.28497, -396.43762, 417.3028, -413.12976, 446.51398, -425.6488, 492.4173, -425.6488, 425.64886, -321.32312, 392.26465, -254.55469, 312.9771, -166.92114, 229.51654, -104.32568, 200.30534, -87.633545, 296.28497, -41.730225, 325.4962, -4.1729736, 312.9771, 20.865112, 287.93893, 33.384277, 258.72772, 45.90332, 221.17049, 62.59546, 137.70993, -12.519043)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelf2/StaticBody2D"]
+position = Vector2(269.32544, 47.431915)
+shape = SubResource("RectangleShape2D_un04c")
 
 [node name="MovingCloud1" type="AnimatableBody2D" parent="."]
-position = Vector2(7, 23)
+position = Vector2(-1084, -352)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="MovingCloud1"]
@@ -298,64 +113,104 @@ texture = ExtResource("8_0cot6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCloud1"]
 position = Vector2(266, 277.25)
-shape = SubResource("RectangleShape2D_w4dla")
+shape = SubResource("RectangleShape2D_65tcn")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_3lsls")
-}
+[node name="Floor1" type="Sprite2D" parent="."]
+position = Vector2(-442.24997, 480.25003)
+scale = Vector2(0.7065678, 0.4417683)
+texture = ExtResource("3_u887v")
 
-[node name="MovingCloud2" type="AnimatableBody2D" parent="."]
-position = Vector2(317, -186)
+[node name="Floor2" type="Sprite2D" parent="."]
+position = Vector2(1183, 483.0001)
+scale = Vector2(0.675, 0.43719512)
+texture = ExtResource("3_u887v")
+flip_h = true
+
+[node name="Player" parent="." instance=ExtResource("3_fdxbv")]
+position = Vector2(-1173, -173)
+
+[node name="FloorCollision" type="StaticBody2D" parent="."]
+position = Vector2(63, 173)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorCollision"]
+shape = SubResource("WorldBoundaryShape2D_qxrlw")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -1274.0
+offset_top = -664.0
+offset_right = -1204.0
+offset_bottom = 716.0
+color = Color(0.8821442, 0.6458976, 0.47954023, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect2/StaticBody2D"]
+position = Vector2(35.5, 684)
+shape = SubResource("RectangleShape2D_8kgoq")
+
+[node name="CameraLimiters" type="Node2D" parent="."]
+
+[node name="CameraLimiter1" parent="CameraLimiters" instance=ExtResource("9_i6n5y")]
+position = Vector2(-217, 707)
+limit_x = 2
+limit_y = 2
+
+[node name="CollisionShape2D" parent="CameraLimiters/CameraLimiter1" index="0"]
+position = Vector2(1562, -323)
+
+[node name="LimitPosition" parent="CameraLimiters/CameraLimiter1" index="1"]
+position = Vector2(1494, 12)
+
+[node name="CameraLimiter2" parent="CameraLimiters" instance=ExtResource("9_i6n5y")]
+position = Vector2(-217, 707)
+limit_x = 1
+
+[node name="CollisionShape2D" parent="CameraLimiters/CameraLimiter2" index="0"]
+position = Vector2(-1059, -296)
+
+[node name="LimitPosition" parent="CameraLimiters/CameraLimiter2" index="1"]
+position = Vector2(-1025, -1)
+
+[node name="BarrierWall" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(-1233, 11)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="MovingCloud2"]
-position = Vector2(265, 276)
-scale = Vector2(0.13636369, 0.13636367)
-texture = ExtResource("8_0cot6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCloud2"]
-position = Vector2(266, 277.25)
-shape = SubResource("RectangleShape2D_w4dla")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 773.0
-offset_top = -152.0
-offset_right = 1593.0
-offset_bottom = 34.0
-theme_override_font_sizes/font_size = 136
-text = "SHELF LONG"
-horizontal_alignment = 1
-metadata/_edit_group_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Label"]
-position = Vector2(10, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Label/StaticBody2D"]
-position = Vector2(421, 102)
-shape = SubResource("RectangleShape2D_76c2s")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierWall"]
+position = Vector2(2.5, 348)
+shape = SubResource("RectangleShape2D_6bxjy")
 
 [node name="Wall1ExitRight" type="Area2D" parent="."]
 position = Vector2(1375.145, 675.895)
 script = ExtResource("11_r6mmu")
-target_spawn = NodePath("../Wall2SpawnLeft")
 
 [node name="RectangleShape2D" type="CollisionShape2D" parent="Wall1ExitRight"]
-position = Vector2(-1.5725098, -64.94751)
-shape = SubResource("RectangleShape2D_386n5")
+position = Vector2(-86.14502, -928.895)
+shape = SubResource("RectangleShape2D_3lsls")
 
 [node name="Wall2SpawnLeft" type="Marker2D" parent="."]
-position = Vector2(4088, 614)
+position = Vector2(-1133, -809)
 
-[node name="FloorofWorld2" type="StaticBody2D" parent="."]
-position = Vector2(0, -718)
+[node name="Clouds" type="Sprite2D" parent="."]
+position = Vector2(-311, 357)
+scale = Vector2(0.47881106, 0.44262356)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorofWorld2"]
-position = Vector2(-456.5, 0)
-shape = SubResource("RectangleShape2D_u4gux")
+[node name="Tree3" type="Sprite2D" parent="."]
+position = Vector2(-311, 357)
+scale = Vector2(0.47881106, 0.44262356)
+texture = ExtResource("8_un04c")
 
-[connection signal="area_entered" from="Wall1ExitRight" to="Player" method="_on_wall_transition_1_to_area_entered"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree3/StaticBody2D"]
+polygon = PackedVector2Array(-766.482, -11.296265, -724.71185, -117.48132, -678.7647, -286.92554, -549.2773, -318.5551, -472.0025, -393.11057, -302.8335, -375.03653, -181.70013, -304.99957, -62.655212, -221.4071, -91.89429, -67.77765, -221.38171, -56.481384, -338.33813, 13.555542, -478.268, 9.037048, -609.84393, 81.33325)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tree3/StaticBody2D"]
+polygon = PackedVector2Array(-344.60364, -569.3326, -304.922, -634.851, -194.23114, -695.85095, -139.93, -781.7027, 83.54022, -817.85077, 215.11618, -820.11005, 296.56793, -754.5916, 417.70132, -731.999, 486.62204, -637.1102, 568.0738, -569.3326, 582.69336, -445.0735, 461.55997, -365.9995, 317.453, -295.96252, 162.9035, -350.1847, 16.708008, -377.29578, -164.99207, -399.88834, -321.63007, -447.33273)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Tree3/StaticBody2D"]
+polygon = PackedVector2Array(89.805786, -15.814758, 133.66443, -49.703613, 200.49661, -51.96289, 271.50586, -131.03687, 361.31165, -155.88867, 415.6128, -124.259094, 501.24158, -151.37012, 641.1715, -88.11096, 680.85315, -22.59253, 766.48193, 22.59259, 795.72107, 119.7406, 789.4555, 192.03687, 818.6946, 264.333, 783.19, 345.66626, 695.4727, 381.81433, 593.13586, 336.62927, 486.62204, 352.44397, 348.7806, 234.96265, 202.58514, 173.96277, 110.69086, 126.51837, 73.09772, 33.888855)
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
-[editable path="CameraLimiters/CameraLimiter3"]

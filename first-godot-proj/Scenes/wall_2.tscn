@@ -23,7 +23,7 @@
 distance = -542.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3j2vd"]
-size = Vector2(951.1301, 639.4158)
+size = Vector2(951.1301, 671.3866)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwffm"]
 size = Vector2(319.5, 292.5)
@@ -38,59 +38,36 @@ size = Vector2(73, 1388)
 size = Vector2(198, 95.5)
 
 [sub_resource type="Animation" id="Animation_76c2s"]
-length = 0.001
+length = 5.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MovingCloud1:position")
+tracks/0/path = NodePath("../MovingCloud1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(7, 23)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MovingCloud2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(317, -186)]
+"values": [Vector2(-1084, -352)]
 }
 
 [sub_resource type="Animation" id="Animation_w4dla"]
 resource_name = "moving_cloud"
-length = 3.0
+length = 8.5
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MovingCloud1:position")
+tracks/0/path = NodePath("../MovingCloud1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.5, 4, 4.5, 6.99, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-29, 221), Vector2(-29, -186)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MovingCloud2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(317, -186), Vector2(317, 221)]
+"values": [Vector2(-1084, -352), Vector2(-1084, -352), Vector2(-1084, 388), Vector2(-1084, 388), Vector2(-1084, -352), Vector2(-1084, -352)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3lsls"]
@@ -103,7 +80,7 @@ _data = {
 size = Vector2(87, 716)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lsls"]
-size = Vector2(95.14502, 215.89502)
+size = Vector2(97.57251, 215.89502)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8u6va"]
 size = Vector2(203.93771, 260.67358)
@@ -118,9 +95,9 @@ size = Vector2(118.25, 111.000015)
 script = ExtResource("1_u4gux")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1150.0
+offset_left = -1160.0
 offset_top = -661.0
-offset_right = 1399.0
+offset_right = 1389.0
 offset_bottom = 718.0
 color = Color(0.6392157, 0.8352941, 1, 1)
 metadata/_edit_use_anchors_ = true
@@ -159,7 +136,7 @@ position = Vector2(63, 173)
 shape = SubResource("WorldBoundaryShape2D_qxrlw")
 
 [node name="Tree1BranchesandTrunk" type="Sprite2D" parent="."]
-position = Vector2(-623, 379)
+position = Vector2(-623, 375)
 scale = Vector2(0.4487805, 0.4487805)
 texture = ExtResource("5_ah2xq")
 
@@ -174,14 +151,14 @@ polygon = PackedVector2Array(-15.643799, 15.644043, -13.036133, 64.19678, -44.32
 one_way_collision = true
 
 [node name="Flower1" type="Sprite2D" parent="."]
-position = Vector2(-707, 623)
+position = Vector2(-706, 619)
 scale = Vector2(0.1251143, 0.12511434)
 texture = ExtResource("6_os2aa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Flower1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flower1/StaticBody2D"]
-position = Vector2(19.97998, 447.59082)
+position = Vector2(23.978027, 423.6123)
 shape = SubResource("RectangleShape2D_3j2vd")
 
 [node name="Flower3" type="Sprite2D" parent="."]
@@ -190,12 +167,12 @@ scale = Vector2(0.09054881, 0.09054881)
 texture = ExtResource("7_l6yjg")
 
 [node name="Flower5" type="Sprite2D" parent="."]
-position = Vector2(260.625, 644)
+position = Vector2(260.625, 642)
 scale = Vector2(0.10685977, 0.09054881)
 texture = ExtResource("8_5yaec")
 
 [node name="Flower4" type="Sprite2D" parent="."]
-position = Vector2(-182, 648)
+position = Vector2(-182, 646)
 scale = Vector2(0.09054881, 0.09054881)
 texture = ExtResource("9_jid5e")
 
@@ -283,7 +260,7 @@ limit_y = 2
 position = Vector2(1562, -323)
 
 [node name="LimitPosition" parent="CameraLimiters/CameraLimiter1" index="1"]
-position = Vector2(1494, 12)
+position = Vector2(1619, 135)
 
 [node name="CameraLimiter2" parent="CameraLimiters" instance=ExtResource("10_jid5e")]
 position = Vector2(-217, 707)
@@ -368,14 +345,14 @@ position = Vector2(1375.145, 675.895)
 script = ExtResource("11_u4gux")
 
 [node name="RectangleShape2D" type="CollisionShape2D" parent="Wall1ExitRight"]
-position = Vector2(-31.14502, -905.895)
+position = Vector2(-23.931274, -905.895)
 shape = SubResource("RectangleShape2D_3lsls")
 
 [node name="Wall2SpawnLeft" type="Marker2D" parent="."]
 position = Vector2(-1133, -809)
 
 [node name="UntitledArtwork14" type="Sprite2D" parent="."]
-position = Vector2(-626.00006, 632)
+position = Vector2(-626.00006, 627)
 scale = Vector2(0.70609754, 0.70609754)
 texture = ExtResource("12_kh02y")
 flip_h = true
@@ -383,7 +360,7 @@ flip_h = true
 [node name="StaticBody2D" type="StaticBody2D" parent="UntitledArtwork14"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UntitledArtwork14/StaticBody2D"]
-position = Vector2(-259.17065, -8.454163)
+position = Vector2(-271.917, -7.0810738)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_8u6va")
 
@@ -411,7 +388,7 @@ texture = ExtResource("13_eo1i5")
 flip_h = true
 
 [node name="Tree2" type="Sprite2D" parent="."]
-position = Vector2(881, 496.00006)
+position = Vector2(881.00006, 493.00006)
 scale = Vector2(0.24268292, 0.24268293)
 texture = ExtResource("17_gbkhu")
 
