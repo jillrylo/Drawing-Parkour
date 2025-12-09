@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bx8dv3meoyyfc"]
+[gd_scene load_steps=27 format=3 uid="uid://bx8dv3meoyyfc"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_bl0yc"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="2_klhag"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b5qlildfc7el6" path="res://Assets/TreesAndFlowers/flower5.PNG" id="14_t7sq7"]
 [ext_resource type="Texture2D" uid="uid://dwl2uh424jlsa" path="res://Assets/TreesAndFlowers/flower2.PNG" id="15_6645g"]
 [ext_resource type="Texture2D" uid="uid://bgw7ypnqs5v8t" path="res://Assets/TreesAndFlowers/flower4.PNG" id="16_fiixi"]
+[ext_resource type="Script" uid="uid://0010kwwuif2q" path="res://Scenes/door_2.gd" id="17_t7sq7"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 2.5
@@ -70,6 +71,9 @@ size = Vector2(73, 1388)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bxjy"]
 size = Vector2(87, 716)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6645g"]
+size = Vector2(179.78625, 1088.9475)
 
 [node name="Wall1" type="Node2D"]
 script = ExtResource("1_bl0yc")
@@ -295,6 +299,14 @@ texture = ExtResource("15_6645g")
 position = Vector2(-100.000015, 620)
 scale = Vector2(0.120122, 0.12012201)
 texture = ExtResource("16_fiixi")
+
+[node name="Door2" type="Area2D" parent="."]
+position = Vector2(1375.145, 675.895)
+script = ExtResource("17_t7sq7")
+
+[node name="RectangleShape2D" type="CollisionShape2D" parent="Door2"]
+position = Vector2(-634.03815, -493.36877)
+shape = SubResource("RectangleShape2D_6645g")
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
