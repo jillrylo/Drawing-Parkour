@@ -304,16 +304,16 @@ position = Vector2(10, 0)
 position = Vector2(421, 102)
 shape = SubResource("RectangleShape2D_76c2s")
 
-[node name="Wall1" type="Node2D" parent="."]
+[node name="Wall1Mesh" type="Node2D" parent="."]
 position = Vector2(1641, -660)
 
-[node name="WallShape" type="Sprite2D" parent="Wall1"]
+[node name="WallShape" type="Sprite2D" parent="Wall1Mesh"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1/WallShape"]
+[node name="Area2D" type="Area2D" parent="Wall1Mesh"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1Mesh"]
 position = Vector2(1274.5, 689)
 shape = SubResource("RectangleShape2D_u4gux")
-
-[node name="Area2D" type="Area2D" parent="Wall1/WallShape"]
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
