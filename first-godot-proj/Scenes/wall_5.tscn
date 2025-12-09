@@ -1,15 +1,21 @@
-[gd_scene load_steps=19 format=3 uid="uid://bx8dv3meoyyfc"]
+[gd_scene load_steps=25 format=3 uid="uid://bx8dv3meoyyfc"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_bl0yc"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="2_klhag"]
 [ext_resource type="Texture2D" uid="uid://bjcodcsmhdtcv" path="res://Assets/Furniture/ShelfWithBooks.png" id="3_bl0yc"]
 [ext_resource type="Texture2D" uid="uid://cj4i8qfqklsnm" path="res://Assets/Furniture/Floor.png" id="3_tnfjk"]
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="4_4kqrr"]
+[ext_resource type="Texture2D" uid="uid://dkhxcqqg873dh" path="res://Assets/TreesAndFlowers/Tree1.PNG" id="5_epjag"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="5_gjkgo"]
 [ext_resource type="AudioStream" uid="uid://x8xh8vxi1kdp" path="res://Sound/ES_Maiden Voyage - Helmut Schenker.mp3" id="7_bl0yc"]
 [ext_resource type="Texture2D" uid="uid://baylvanvifmkw" path="res://Assets/Furniture/Door.png" id="8_tnfjk"]
 [ext_resource type="Texture2D" uid="uid://cxxcqk1p6a7nx" path="res://Assets/TreesAndFlowers/Tree4.PNG" id="9_4kqrr"]
 [ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="10_4kqrr"]
+[ext_resource type="Texture2D" uid="uid://d31gdg04kwyve" path="res://Assets/Arrows/IMG_3671.PNG" id="11_4yg06"]
+[ext_resource type="Texture2D" uid="uid://c5lb63jamejda" path="res://Assets/Arrows/IMG_3672.PNG" id="12_q5ntl"]
+[ext_resource type="Texture2D" uid="uid://b5qlildfc7el6" path="res://Assets/TreesAndFlowers/flower5.PNG" id="14_t7sq7"]
+[ext_resource type="Texture2D" uid="uid://dwl2uh424jlsa" path="res://Assets/TreesAndFlowers/flower2.PNG" id="15_6645g"]
+[ext_resource type="Texture2D" uid="uid://bgw7ypnqs5v8t" path="res://Assets/TreesAndFlowers/flower4.PNG" id="16_fiixi"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 2.5
@@ -50,11 +56,11 @@ _data = {
 &"moving_cloud": SubResource("Animation_w4dla")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_65tcn"]
-size = Vector2(198, 95.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_klhag"]
 size = Vector2(530.9165, 536.00745)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65tcn"]
+size = Vector2(198, 95.5)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 distance = -542.0
@@ -81,6 +87,7 @@ offset_right = 1350.0
 offset_bottom = 718.0
 color = Color(0.6392157, 0.8352941, 1, 1)
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect"]
 layout_mode = 0
@@ -89,19 +96,7 @@ offset_right = 5.0
 offset_bottom = 1379.0
 color = Color(0.6392157, 0.8352941, 1, 1)
 metadata/_edit_use_anchors_ = true
-
-[node name="MovingCloud1" type="AnimatableBody2D" parent="."]
-position = Vector2(-1111, -350)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="MovingCloud1"]
-position = Vector2(265, 276)
-scale = Vector2(0.13636369, 0.13636367)
-texture = ExtResource("2_klhag")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCloud1"]
-position = Vector2(266, 277.25)
-shape = SubResource("RectangleShape2D_65tcn")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(-1249, -53)
@@ -122,6 +117,55 @@ autoplay = true
 position = Vector2(-442.24997, 480.25003)
 scale = Vector2(0.7065678, 0.4417683)
 texture = ExtResource("3_tnfjk")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Floor1"]
+position = Vector2(1101.4512, -2103.4783)
+rotation = -0.17454836
+scale = Vector2(0.31665665, 0.29435027)
+skew = -0.028951406
+texture = ExtResource("2_klhag")
+
+[node name="Clouds3" type="Sprite2D" parent="Floor1"]
+position = Vector2(-468.24512, -2260.492)
+scale = Vector2(0.6901337, 0.589758)
+texture = ExtResource("2_klhag")
+
+[node name="Clouds2" type="Sprite2D" parent="Floor1"]
+position = Vector2(501.36725, -2225.7144)
+scale = Vector2(0.29457268, 0.27230948)
+texture = ExtResource("2_klhag")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Floor1"]
+position = Vector2(1627.9402, -2372.8506)
+rotation = 0.18590418
+scale = Vector2(0.3165493, 0.2944657)
+skew = 0.030728102
+texture = ExtResource("2_klhag")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Floor1"]
+position = Vector2(563.64014, -1720.9249)
+rotation = 0.22165681
+scale = Vector2(0.43296713, 0.40536737)
+skew = -0.04281926
+texture = ExtResource("2_klhag")
+
+[node name="Tree1" type="Sprite2D" parent="."]
+position = Vector2(-992.00006, 472)
+scale = Vector2(0.31859758, 0.31859764)
+texture = ExtResource("5_epjag")
+
+[node name="MovingCloud1" type="AnimatableBody2D" parent="."]
+position = Vector2(-1111, -350)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingCloud1"]
+position = Vector2(265, 276)
+scale = Vector2(0.13636369, 0.13636367)
+texture = ExtResource("2_klhag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCloud1"]
+position = Vector2(266, 277.25)
+shape = SubResource("RectangleShape2D_65tcn")
 
 [node name="Floor2" type="Sprite2D" parent="."]
 position = Vector2(1183, 483.0001)
@@ -223,6 +267,34 @@ flip_h = true
 position = Vector2(-2.4117432, -14.470551)
 rotation = 6.2831855
 polygon = PackedVector2Array(0, 0, -87.633575, -29.211182, -150.229, -95.979614, -212.8244, -83.46057, -308.80408, -125.190796, -383.91858, -183.61316, -429.8219, -250.38159, -471.5522, -321.32312, -521.6285, -421.4757, -467.37915, -425.6488, -350.53436, -367.22644, -262.90076, -287.93884, -254.55469, -304.63098, -250.38165, -404.7837, -229.51654, -446.51392, -183.61322, -467.37903, -191.95929, -513.28235, -158.57507, -484.07117, -146.05597, -521.6284, -121.01782, -492.41724, -41.730286, -484.07117, 16.692108, -450.687, 58.422394, -396.43762, 58.422394, -317.15002, 66.76845, -300.458, 62.595413, -275.4198, 112.67175, -300.458, 200.30534, -379.74548, 296.28497, -396.43762, 417.3028, -413.12976, 446.51398, -425.6488, 492.4173, -425.6488, 425.64886, -321.32312, 392.26465, -254.55469, 312.9771, -166.92114, 229.51654, -104.32568, 200.30534, -87.633545, 296.28497, -41.730225, 325.4962, -4.1729736, 312.9771, 20.865112, 287.93893, 33.384277, 258.72772, 45.90332, 221.17049, 62.59546, 137.70993, -12.519043)
+
+[node name="Img3671" type="Sprite2D" parent="."]
+position = Vector2(-692.00006, 113.99997)
+rotation = 0.25830874
+scale = Vector2(0.50173753, 0.50173753)
+texture = ExtResource("11_4yg06")
+flip_h = true
+
+[node name="Img3672" type="Sprite2D" parent="."]
+position = Vector2(491, -182.00002)
+rotation = -1.2566371
+scale = Vector2(0.4916073, 0.4916073)
+texture = ExtResource("12_q5ntl")
+
+[node name="Flower5" type="Sprite2D" parent="."]
+position = Vector2(-695, 616)
+scale = Vector2(0.11859755, 0.11859756)
+texture = ExtResource("14_t7sq7")
+
+[node name="Flower2" type="Sprite2D" parent="."]
+position = Vector2(-386, 611)
+scale = Vector2(0.13018294, 0.13018297)
+texture = ExtResource("15_6645g")
+
+[node name="Flower4" type="Sprite2D" parent="."]
+position = Vector2(-100.000015, 620)
+scale = Vector2(0.120122, 0.12012201)
+texture = ExtResource("16_fiixi")
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]

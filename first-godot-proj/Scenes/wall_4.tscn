@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b2ojh7o6jaf53"]
+[gd_scene load_steps=31 format=3 uid="uid://b2ojh7o6jaf53"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_l7jo2"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="3_764fs"]
@@ -13,6 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://dwl2uh424jlsa" path="res://Assets/TreesAndFlowers/flower2.PNG" id="10_4q4py"]
 [ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="11_nkkfo"]
 [ext_resource type="Texture2D" uid="uid://bjcodcsmhdtcv" path="res://Assets/Furniture/ShelfWithBooks.png" id="13_0b6qi"]
+[ext_resource type="Texture2D" uid="uid://5cap2c4wogha" path="res://Assets/Arrows/IMG_3668.PNG" id="14_2bll5"]
+[ext_resource type="Texture2D" uid="uid://dq5ilawwclis2" path="res://Assets/Arrows/IMG_3669.PNG" id="15_skxua"]
+[ext_resource type="Texture2D" uid="uid://ctry0uavxy306" path="res://Assets/Arrows/IMG_3670.PNG" id="16_ywny1"]
+[ext_resource type="Texture2D" uid="uid://c0iwni4hs268n" path="res://Assets/TreesAndFlowers/flower1.PNG" id="17_cdu65"]
+[ext_resource type="Texture2D" uid="uid://bs3ajq776nju1" path="res://Assets/TreesAndFlowers/flower3.PNG" id="18_fjhpi"]
+[ext_resource type="Texture2D" uid="uid://bgw7ypnqs5v8t" path="res://Assets/TreesAndFlowers/flower4.PNG" id="19_48bp5"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 5.0
@@ -27,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1084, -352)]
+"values": [Vector2(-1284, 372)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -117,6 +123,7 @@ offset_right = 1350.0
 offset_bottom = 718.0
 color = Color(0.6392157, 0.8352941, 1, 1)
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect"]
 layout_mode = 0
@@ -125,6 +132,7 @@ offset_right = 5.0
 offset_bottom = 1379.0
 color = Color(0.6392157, 0.8352941, 1, 1)
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="MovingCloud2" type="AnimatableBody2D" parent="."]
 position = Vector2(-477, 83)
@@ -140,7 +148,7 @@ position = Vector2(266, 277.25)
 shape = SubResource("RectangleShape2D_65tcn")
 
 [node name="MovingCloud1" type="AnimatableBody2D" parent="."]
-position = Vector2(-1084, -352)
+position = Vector2(-1284, 372)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="MovingCloud1"]
@@ -164,7 +172,7 @@ texture = ExtResource("4_0to1t")
 flip_h = true
 
 [node name="Player" parent="." instance=ExtResource("5_4q4py")]
-position = Vector2(-1179, 663)
+position = Vector2(-1204, 662)
 
 [node name="FloorCollision" type="StaticBody2D" parent="."]
 position = Vector2(63, 173)
@@ -173,10 +181,10 @@ position = Vector2(63, 173)
 shape = SubResource("WorldBoundaryShape2D_qxrlw")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = -1274.0
-offset_top = -664.0
-offset_right = -1204.0
-offset_bottom = 716.0
+offset_left = -1299.0
+offset_top = -665.0
+offset_right = -1229.0
+offset_bottom = 715.0
 color = Color(0.8821442, 0.6458976, 0.47954023, 1)
 metadata/_edit_use_anchors_ = true
 metadata/_edit_group_ = true
@@ -327,6 +335,70 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect3/StaticBody2D"]
 position = Vector2(35.5, 684)
 shape = SubResource("RectangleShape2D_8kgoq")
+
+[node name="Img3668" type="Sprite2D" parent="."]
+position = Vector2(-449, 224.00003)
+rotation = -2.9286625
+scale = Vector2(0.30205917, 0.30205914)
+texture = ExtResource("14_2bll5")
+
+[node name="Img3669" type="Sprite2D" parent="."]
+position = Vector2(394.99994, -129.99998)
+rotation = -2.6179938
+scale = Vector2(0.4471121, 0.4471121)
+texture = ExtResource("15_skxua")
+
+[node name="Img3670" type="Sprite2D" parent="."]
+position = Vector2(993, -284)
+rotation = -4.825835
+scale = Vector2(0.50100505, 0.50100505)
+texture = ExtResource("16_ywny1")
+
+[node name="Flower1" type="Sprite2D" parent="."]
+position = Vector2(-785, 617)
+scale = Vector2(0.12560976, 0.12560977)
+texture = ExtResource("17_cdu65")
+
+[node name="Flower3" type="Sprite2D" parent="."]
+position = Vector2(-588, 620)
+scale = Vector2(0.108841464, 0.10884147)
+texture = ExtResource("18_fjhpi")
+
+[node name="Flower4" type="Sprite2D" parent="."]
+position = Vector2(-343, 645)
+scale = Vector2(0.089939065, 0.08993908)
+texture = ExtResource("19_48bp5")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(969, -498)
+rotation = -0.17454836
+scale = Vector2(0.31665665, 0.29435027)
+skew = -0.028951406
+texture = ExtResource("3_764fs")
+
+[node name="Clouds2" type="Sprite2D" parent="."]
+position = Vector2(-869, -87.99991)
+scale = Vector2(0.29457268, 0.27230948)
+texture = ExtResource("3_764fs")
+
+[node name="Clouds2" type="Sprite2D" parent="Clouds2"]
+position = Vector2(-101.84239, -1377.1099)
+scale = Vector2(0.9312219, 0.860842)
+texture = ExtResource("3_764fs")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(378, -474)
+rotation = 0.18590418
+scale = Vector2(0.3165493, 0.2944657)
+skew = 0.030728102
+texture = ExtResource("3_764fs")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(-245.00002, -276.00003)
+rotation = -0.2672747
+scale = Vector2(0.43296713, 0.40536737)
+skew = -0.04281926
+texture = ExtResource("3_764fs")
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]

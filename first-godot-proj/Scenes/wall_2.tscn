@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://3fy08v7yv2yc"]
+[gd_scene load_steps=40 format=3 uid="uid://3fy08v7yv2yc"]
 
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="1_pe6ch"]
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_u4gux"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bs3ajq776nju1" path="res://Assets/TreesAndFlowers/flower3.PNG" id="7_l6yjg"]
 [ext_resource type="Texture2D" uid="uid://b5qlildfc7el6" path="res://Assets/TreesAndFlowers/flower5.PNG" id="8_5yaec"]
 [ext_resource type="PackedScene" uid="uid://blbcv5qepupo" path="res://Assets/Furniture/DresserModel1.glb" id="8_47hvw"]
+[ext_resource type="Texture2D" uid="uid://dwl2uh424jlsa" path="res://Assets/TreesAndFlowers/flower2.PNG" id="8_gbkhu"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="9_5yaec"]
 [ext_resource type="Texture2D" uid="uid://bgw7ypnqs5v8t" path="res://Assets/TreesAndFlowers/flower4.PNG" id="9_jid5e"]
+[ext_resource type="Texture2D" uid="uid://b3n8erwrqf4ay" path="res://Assets/Arrows/IMG_3660.PNG" id="9_vnkdx"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="10_jid5e"]
 [ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="11_gbkhu"]
 [ext_resource type="Script" uid="uid://jgt10brqxqfb" path="res://Scenes/wall_1_exit_right.gd" id="11_u4gux"]
@@ -19,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://cxxcqk1p6a7nx" path="res://Assets/TreesAndFlowers/Tree4.PNG" id="17_gbkhu"]
 [ext_resource type="Texture2D" uid="uid://bp4ivlqbcqfc0" path="res://Assets/Untitled_Artwork-1 6.png" id="18_g62e1"]
 [ext_resource type="AudioStream" uid="uid://bvvjnc6njaahc" path="res://Sound/bunny-hop-andrey-rossi-main-version-30994-02-09.mp3" id="19_jid5e"]
+[ext_resource type="Texture2D" uid="uid://b8datvmx2qbeq" path="res://Assets/Arrows/IMG_3659.PNG" id="22_v7ic4"]
+[ext_resource type="Texture2D" uid="uid://c7556yvc330ns" path="res://Assets/Arrows/IMG_3661.PNG" id="23_avna3"]
+[ext_resource type="Texture2D" uid="uid://bpeoh5pba274y" path="res://Assets/Arrows/IMG_3662.PNG" id="24_3gdg4"]
+[ext_resource type="Texture2D" uid="uid://bv3fdi1o4racb" path="res://Assets/Arrows/IMG_3663.PNG" id="25_whiw8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 distance = -542.0
@@ -125,6 +131,7 @@ offset_right = 1389.0
 offset_bottom = 718.0
 color = Color(0.6392157, 0.8352941, 1, 1)
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect"]
 layout_mode = 0
@@ -190,8 +197,18 @@ position = Vector2(-555, 638)
 scale = Vector2(0.09054881, 0.09054881)
 texture = ExtResource("7_l6yjg")
 
+[node name="Sprite2D" type="Sprite2D" parent="Flower3"]
+position = Vector2(8349.088, 44.175068)
+texture = ExtResource("8_gbkhu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Flower3"]
+position = Vector2(-2451.7163, -1976.8342)
+rotation = 0.9773844
+scale = Vector2(3.621268, 3.2003357)
+texture = ExtResource("9_vnkdx")
+
 [node name="Flower5" type="Sprite2D" parent="."]
-position = Vector2(260.625, 642)
+position = Vector2(569, 643)
 scale = Vector2(0.10685977, 0.09054881)
 texture = ExtResource("8_5yaec")
 
@@ -441,6 +458,30 @@ texture = ExtResource("18_g62e1")
 stream = ExtResource("19_jid5e")
 volume_db = -3.0
 autoplay = true
+
+[node name="Img3659" type="Sprite2D" parent="."]
+position = Vector2(87.00001, -88)
+rotation = -0.16580628
+scale = Vector2(0.33841464, 0.33841464)
+texture = ExtResource("22_v7ic4")
+
+[node name="Img3661" type="Sprite2D" parent="."]
+position = Vector2(112.00001, 431)
+rotation = 1.0995574
+scale = Vector2(0.35958824, 0.3595882)
+texture = ExtResource("23_avna3")
+
+[node name="Img3662" type="Sprite2D" parent="."]
+position = Vector2(538.00006, -326.00003)
+rotation = -1.8325958
+scale = Vector2(0.27317074, 0.27317074)
+texture = ExtResource("24_3gdg4")
+
+[node name="Img3663" type="Sprite2D" parent="."]
+position = Vector2(1080, -118.000015)
+rotation = -3.2375858
+scale = Vector2(-0.22548507, 0.23859471)
+texture = ExtResource("25_whiw8")
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
