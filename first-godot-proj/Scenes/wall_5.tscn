@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bx8dv3meoyyfc"]
+[gd_scene load_steps=19 format=3 uid="uid://bx8dv3meoyyfc"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_bl0yc"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="2_klhag"]
@@ -7,9 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="4_4kqrr"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="5_gjkgo"]
 [ext_resource type="AudioStream" uid="uid://x8xh8vxi1kdp" path="res://Sound/ES_Maiden Voyage - Helmut Schenker.mp3" id="7_bl0yc"]
+[ext_resource type="Texture2D" uid="uid://baylvanvifmkw" path="res://Assets/Furniture/Door.png" id="8_tnfjk"]
+[ext_resource type="Texture2D" uid="uid://cxxcqk1p6a7nx" path="res://Assets/TreesAndFlowers/Tree4.PNG" id="9_4kqrr"]
+[ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="10_4kqrr"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
-length = 5.0
+length = 2.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -21,7 +24,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1084, -352)]
+"values": [Vector2(-1111, -350)]
 }
 
 [sub_resource type="Animation" id="Animation_w4dla"]
@@ -38,7 +41,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5, 4, 4.5, 6.99, 8.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-1084, -352), Vector2(-1084, -352), Vector2(-1084, 388), Vector2(-1084, 388), Vector2(-1084, -352), Vector2(-1084, -352)]
+"values": [Vector2(-1111, -352), Vector2(-1111, -352), Vector2(-1111, 388), Vector2(-1111, 388), Vector2(-1111, -352), Vector2(-1111, -352)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3lsls"]
@@ -51,7 +54,7 @@ _data = {
 size = Vector2(198, 95.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_klhag"]
-size = Vector2(754.1199, 536.00745)
+size = Vector2(530.9165, 536.00745)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 distance = -542.0
@@ -88,7 +91,7 @@ color = Color(0.6392157, 0.8352941, 1, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="MovingCloud1" type="AnimatableBody2D" parent="."]
-position = Vector2(-1084, -352)
+position = Vector2(-1111, -350)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="MovingCloud1"]
@@ -108,8 +111,8 @@ texture = ExtResource("3_bl0yc")
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
-position = Vector2(427.37878, 60.909958)
-scale = Vector2(1.0000001, 1.0000004)
+position = Vector2(315.7771, 60.909966)
+scale = Vector2(0.9999998, 1.0000004)
 shape = SubResource("RectangleShape2D_klhag")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sprite2D2"]
@@ -157,7 +160,7 @@ limit_x = 2
 limit_y = 2
 
 [node name="CollisionShape2D" parent="CameraLimiters/CameraLimiter1" index="0"]
-position = Vector2(1562, -323)
+position = Vector2(1678, -514)
 
 [node name="LimitPosition" parent="CameraLimiters/CameraLimiter1" index="1"]
 position = Vector2(1567, 134)
@@ -192,6 +195,34 @@ scale = Vector2(0.47881106, 0.44262356)
 stream = ExtResource("7_bl0yc")
 volume_db = -2.0
 autoplay = true
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(1031, -8.000005)
+scale = Vector2(0.96585363, 0.9658537)
+texture = ExtResource("8_tnfjk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(286.00003, 379.00003)
+scale = Vector2(0.3628049, 0.3628049)
+texture = ExtResource("9_4kqrr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D"]
+polygon = PackedVector2Array(-724.90765, 38.588135, -724.90765, -148.84045, -622.92444, -148.84045, -625.6808, -361.07574, -512.67236, -361.07574, -512.67236, -509.91608, -336.26898, -515.4287, -336.26898, -363.83203, -242.55469, -366.58838, -187.42865, -366.58838, -198.45386, -534.7228, -146.0841, -531.9665, -151.59674, -738.6892, -79.93286, -744.2018, -90.95807, -964.706, 107.49573, -964.706, 129.54614, -815.86566, 245.31091, -804.84045, 245.31091, -578.82367, 322.4873, -551.2606, 327.99988, -278.38666, 380.36963, -303.19342, 396.90747, -523.69763, 556.7731, -518.185, 628.4369, -270.11774, 744.20166, 101.98303, 752.4706, 281.1427, 700.1008, 438.25195, 518.1848, 490.6217, 576.06714, 934.3865, -413.44547, 926.11755, -407.93286, 520.94104, -556.7732, 529.20996, -647.7312, 452.03357, -697.3446, 341.78137)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-384.00003, 286)
+scale = Vector2(0.41463414, 0.41463417)
+texture = ExtResource("10_4kqrr")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D3/StaticBody2D"]
+position = Vector2(-2.4117432, -14.470551)
+rotation = 6.2831855
+polygon = PackedVector2Array(0, 0, -87.633575, -29.211182, -150.229, -95.979614, -212.8244, -83.46057, -308.80408, -125.190796, -383.91858, -183.61316, -429.8219, -250.38159, -471.5522, -321.32312, -521.6285, -421.4757, -467.37915, -425.6488, -350.53436, -367.22644, -262.90076, -287.93884, -254.55469, -304.63098, -250.38165, -404.7837, -229.51654, -446.51392, -183.61322, -467.37903, -191.95929, -513.28235, -158.57507, -484.07117, -146.05597, -521.6284, -121.01782, -492.41724, -41.730286, -484.07117, 16.692108, -450.687, 58.422394, -396.43762, 58.422394, -317.15002, 66.76845, -300.458, 62.595413, -275.4198, 112.67175, -300.458, 200.30534, -379.74548, 296.28497, -396.43762, 417.3028, -413.12976, 446.51398, -425.6488, 492.4173, -425.6488, 425.64886, -321.32312, 392.26465, -254.55469, 312.9771, -166.92114, 229.51654, -104.32568, 200.30534, -87.633545, 296.28497, -41.730225, 325.4962, -4.1729736, 312.9771, 20.865112, 287.93893, 33.384277, 258.72772, 45.90332, 221.17049, 62.59546, 137.70993, -12.519043)
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
