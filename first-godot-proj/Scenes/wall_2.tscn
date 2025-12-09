@@ -29,11 +29,11 @@ size = Vector2(951.1301, 671.3866)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwffm"]
 size = Vector2(319.5, 292.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xoxf"]
-size = Vector2(70, 1380)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kgoq"]
 size = Vector2(73, 1388)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xoxf"]
+size = Vector2(70, 1380)
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 0.001
@@ -251,6 +251,21 @@ position = Vector2(7631.997, 1108.1735)
 rotation = 0.1134464
 scale = Vector2(1.1591163, 1.1998878)
 texture = ExtResource("9_5yaec")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 1382.0
+offset_top = -664.0
+offset_right = 1452.0
+offset_bottom = 716.0
+color = Color(0.8821442, 0.6458976, 0.47954023, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect3/StaticBody2D"]
+position = Vector2(35.5, 684)
+shape = SubResource("RectangleShape2D_8kgoq")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
