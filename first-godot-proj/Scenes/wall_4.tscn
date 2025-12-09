@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=24 format=3 uid="uid://b2ojh7o6jaf53"]
+=======
+[gd_scene load_steps=17 format=3 uid="uid://b2ojh7o6jaf53"]
+>>>>>>> 2fa221c6b844d4f012fd5c26cc8d08e21a272d7a
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_l7jo2"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="3_764fs"]
@@ -6,12 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="5_4q4py"]
 [ext_resource type="Script" uid="uid://bw1mn011d2e6p" path="res://Scenes/wall_3_exit_right_2.gd" id="6_3n7aw"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="6_yxvh4"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://dwl2uh424jlsa" path="res://Assets/TreesAndFlowers/flower2.PNG" id="7_0to1t"]
 [ext_resource type="Texture2D" uid="uid://bb2pxi4nva6s3" path="res://Assets/Furniture/Bed.png" id="7_3n7aw"]
 [ext_resource type="Texture2D" uid="uid://m6g6r1ibg83a" path="res://Assets/TreesAndFlowers/Tree2.PNG" id="7_vbdoy"]
 [ext_resource type="Texture2D" uid="uid://bvlkad1d1cchc" path="res://Assets/animals/Untitled_Artwork-2 5.png" id="8_4q4py"]
 [ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="9_764fs"]
 [ext_resource type="Texture2D" uid="uid://bjcodcsmhdtcv" path="res://Assets/Furniture/ShelfWithBooks.png" id="12_4q4py"]
+=======
+[ext_resource type="Texture2D" uid="uid://dtibnk780ocrd" path="res://Assets/TreesAndFlowers/Tree3.PNG" id="8_0b6qi"]
+[ext_resource type="AudioStream" uid="uid://ci0c10onglmt7" path="res://Sound/hipsters-soundroll-main-version-1780-02-47.mp3" id="8_l7jo2"]
+>>>>>>> 2fa221c6b844d4f012fd5c26cc8d08e21a272d7a
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 5.0
@@ -322,6 +331,10 @@ texture = ExtResource("12_4q4py")
 position = Vector2(-323.79492, 30.455063)
 scale = Vector2(1.0000001, 1.0000004)
 shape = SubResource("RectangleShape2D_0b6qi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_l7jo2")
+autoplay = true
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
