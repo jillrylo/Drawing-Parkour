@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bx8dv3meoyyfc"]
+[gd_scene load_steps=21 format=3 uid="uid://bx8dv3meoyyfc"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_bl0yc"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="2_klhag"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://baylvanvifmkw" path="res://Assets/Furniture/Door.png" id="8_tnfjk"]
 [ext_resource type="Texture2D" uid="uid://cxxcqk1p6a7nx" path="res://Assets/TreesAndFlowers/Tree4.PNG" id="9_4kqrr"]
 [ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="10_4kqrr"]
+[ext_resource type="Script" uid="uid://etrnaq3phwt3" path="res://Scenes/enter_door.gd" id="11_gjkgo"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 2.5
@@ -64,6 +65,9 @@ size = Vector2(73, 1388)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bxjy"]
 size = Vector2(87, 716)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yg06"]
+size = Vector2(168, 1130.0525)
 
 [node name="Wall1" type="Node2D"]
 script = ExtResource("1_bl0yc")
@@ -223,6 +227,14 @@ flip_h = true
 position = Vector2(-2.4117432, -14.470551)
 rotation = 6.2831855
 polygon = PackedVector2Array(0, 0, -87.633575, -29.211182, -150.229, -95.979614, -212.8244, -83.46057, -308.80408, -125.190796, -383.91858, -183.61316, -429.8219, -250.38159, -471.5522, -321.32312, -521.6285, -421.4757, -467.37915, -425.6488, -350.53436, -367.22644, -262.90076, -287.93884, -254.55469, -304.63098, -250.38165, -404.7837, -229.51654, -446.51392, -183.61322, -467.37903, -191.95929, -513.28235, -158.57507, -484.07117, -146.05597, -521.6284, -121.01782, -492.41724, -41.730286, -484.07117, 16.692108, -450.687, 58.422394, -396.43762, 58.422394, -317.15002, 66.76845, -300.458, 62.595413, -275.4198, 112.67175, -300.458, 200.30534, -379.74548, 296.28497, -396.43762, 417.3028, -413.12976, 446.51398, -425.6488, 492.4173, -425.6488, 425.64886, -321.32312, 392.26465, -254.55469, 312.9771, -166.92114, 229.51654, -104.32568, 200.30534, -87.633545, 296.28497, -41.730225, 325.4962, -4.1729736, 312.9771, 20.865112, 287.93893, 33.384277, 258.72772, 45.90332, 221.17049, 62.59546, 137.70993, -12.519043)
+
+[node name="EnterDoor" type="Area2D" parent="."]
+position = Vector2(765, 1572)
+script = ExtResource("11_gjkgo")
+
+[node name="RectangleShape2D" type="CollisionShape2D" parent="EnterDoor"]
+position = Vector2(-7, -1373.9738)
+shape = SubResource("RectangleShape2D_4yg06")
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
