@@ -98,7 +98,7 @@ height = 98.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gu6f8"]
 size = Vector2(43, 100)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(-5, 0)
 script = ExtResource("1_onrkg")
 metadata/_edit_group_ = true

@@ -56,10 +56,14 @@ func _move_limit_toward (current, target):
 	return target
 	
 func set_limiter(limiter: CameraLimiter, instant = false):
-	limit_left_target = limiter.get_limit_left()
-	limit_right_target = limiter.get_limit_right()
-	limit_top_target = limiter.get_limit_top() + camera.offset.y
-	limit_bottom_target = limiter.get_limit_bottom() - camera.offset.y
+	if limiter.limit_x == limiter.LimitX.LEFT:
+		limit_left_target = limiter.get_limit_left()
+	if limiter.limit_x == limiter.LimitX.RIGHT:
+		limit_right_target = limiter.get_limit_right()
+	if limiter.limit_y == limiter.LimitY.TOP:
+		limit_top_target = limiter.get_limit_top() + camera.offset.y
+	if limiter.limit_y == limiter.LimitY.BOTTOM:
+		limit_bottom_target = limiter.get_limit_bottom() - camera.offset.y
 	if instant:
 		camera.limit_left = limit_left_target
 		camera.limit_top = limit_top_target

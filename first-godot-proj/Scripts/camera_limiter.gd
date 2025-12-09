@@ -24,11 +24,16 @@ func get_limit_bottom():
 	return marker.global_position.y
 	
 func get_limit_left():
-	if limit_y != LimitX.LEFT:
+	if limit_x != LimitX.LEFT:
 		return -MAX_VAL
 	return marker.global_position.x
 	
 func get_limit_right():
-	if limit_y != LimitX.RIGHT:
+	if limit_x != LimitX.RIGHT:
 		return MAX_VAL
 	return marker.global_position.x
+	
+func _ready():
+	var player:Player = get_tree().get_first_node_in_group("Player")
+	player.camera.camera_limit_manager.set_limiter(self)
+	
