@@ -1,13 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://c21xaksqqjmwv"]
+[gd_scene load_steps=14 format=3 uid="uid://bx8dv3meoyyfc"]
 
-[ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_2apbk"]
-[ext_resource type="Texture2D" uid="uid://bjcodcsmhdtcv" path="res://Assets/Furniture/ShelfWithBooks.png" id="2_eda4v"]
-[ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="3_fdxbv"]
-[ext_resource type="Texture2D" uid="uid://cj4i8qfqklsnm" path="res://Assets/Furniture/Floor.png" id="3_u887v"]
-[ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="8_0cot6"]
-[ext_resource type="Script" uid="uid://tpsksabhkuko" path="res://Scenes/wall_2_exit_right_2.gd" id="8_65tcn"]
-[ext_resource type="Texture2D" uid="uid://dtibnk780ocrd" path="res://Assets/TreesAndFlowers/Tree3.PNG" id="8_un04c"]
-[ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="9_i6n5y"]
+[ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_bl0yc"]
+[ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="2_klhag"]
+[ext_resource type="Texture2D" uid="uid://cj4i8qfqklsnm" path="res://Assets/Furniture/Floor.png" id="3_tnfjk"]
+[ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="4_4kqrr"]
+[ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="5_gjkgo"]
+[ext_resource type="Texture2D" uid="uid://dtibnk780ocrd" path="res://Assets/TreesAndFlowers/Tree3.PNG" id="7_q5ntl"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 5.0
@@ -48,9 +46,6 @@ _data = {
 &"moving_cloud": SubResource("Animation_w4dla")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_un04c"]
-size = Vector2(635.76263, 528.01556)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65tcn"]
 size = Vector2(198, 95.5)
 
@@ -63,11 +58,8 @@ size = Vector2(73, 1388)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bxjy"]
 size = Vector2(87, 716)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lsls"]
-size = Vector2(97.57251, 215.89502)
-
 [node name="Wall1" type="Node2D"]
-script = ExtResource("1_2apbk")
+script = ExtResource("1_bl0yc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ColorRect")
@@ -91,17 +83,6 @@ offset_bottom = 1379.0
 color = Color(0.6392157, 0.8352941, 1, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Shelf2" type="Sprite2D" parent="."]
-position = Vector2(-1185.9999, -56)
-scale = Vector2(0.45308784, 0.29540232)
-texture = ExtResource("2_eda4v")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Shelf2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelf2/StaticBody2D"]
-position = Vector2(269.32544, 47.431915)
-shape = SubResource("RectangleShape2D_un04c")
-
 [node name="MovingCloud1" type="AnimatableBody2D" parent="."]
 position = Vector2(-1084, -352)
 metadata/_edit_group_ = true
@@ -109,7 +90,7 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="MovingCloud1"]
 position = Vector2(265, 276)
 scale = Vector2(0.13636369, 0.13636367)
-texture = ExtResource("8_0cot6")
+texture = ExtResource("2_klhag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCloud1"]
 position = Vector2(266, 277.25)
@@ -118,15 +99,15 @@ shape = SubResource("RectangleShape2D_65tcn")
 [node name="Floor1" type="Sprite2D" parent="."]
 position = Vector2(-442.24997, 480.25003)
 scale = Vector2(0.7065678, 0.4417683)
-texture = ExtResource("3_u887v")
+texture = ExtResource("3_tnfjk")
 
 [node name="Floor2" type="Sprite2D" parent="."]
 position = Vector2(1183, 483.0001)
 scale = Vector2(0.675, 0.43719512)
-texture = ExtResource("3_u887v")
+texture = ExtResource("3_tnfjk")
 flip_h = true
 
-[node name="Player" parent="." instance=ExtResource("3_fdxbv")]
+[node name="Player" parent="." instance=ExtResource("4_4kqrr")]
 position = Vector2(-1173, -173)
 
 [node name="FloorCollision" type="StaticBody2D" parent="."]
@@ -151,7 +132,7 @@ shape = SubResource("RectangleShape2D_8kgoq")
 
 [node name="CameraLimiters" type="Node2D" parent="."]
 
-[node name="CameraLimiter1" parent="CameraLimiters" instance=ExtResource("9_i6n5y")]
+[node name="CameraLimiter1" parent="CameraLimiters" instance=ExtResource("5_gjkgo")]
 position = Vector2(-217, 707)
 limit_x = 2
 limit_y = 2
@@ -162,7 +143,7 @@ position = Vector2(1562, -323)
 [node name="LimitPosition" parent="CameraLimiters/CameraLimiter1" index="1"]
 position = Vector2(1494, 12)
 
-[node name="CameraLimiter2" parent="CameraLimiters" instance=ExtResource("9_i6n5y")]
+[node name="CameraLimiter2" parent="CameraLimiters" instance=ExtResource("5_gjkgo")]
 position = Vector2(-217, 707)
 limit_x = 1
 
@@ -181,14 +162,6 @@ metadata/_edit_group_ = true
 position = Vector2(2.5, 348)
 shape = SubResource("RectangleShape2D_6bxjy")
 
-[node name="Wall2ExitRight2" type="Area2D" parent="."]
-position = Vector2(1375.145, 675.895)
-script = ExtResource("8_65tcn")
-
-[node name="RectangleShape2D" type="CollisionShape2D" parent="Wall2ExitRight2"]
-position = Vector2(-40.14502, -49.89502)
-shape = SubResource("RectangleShape2D_3lsls")
-
 [node name="Wall2SpawnLeft" type="Marker2D" parent="."]
 position = Vector2(-1133, -809)
 
@@ -199,7 +172,7 @@ scale = Vector2(0.47881106, 0.44262356)
 [node name="Tree3" type="Sprite2D" parent="."]
 position = Vector2(-311, 357)
 scale = Vector2(0.47881106, 0.44262356)
-texture = ExtResource("8_un04c")
+texture = ExtResource("7_q5ntl")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tree3"]
 
