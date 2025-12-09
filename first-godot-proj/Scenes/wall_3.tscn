@@ -132,6 +132,21 @@ position = Vector2(63, 173)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloorCollision"]
 shape = SubResource("WorldBoundaryShape2D_qxrlw")
 
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 1341.0
+offset_top = -663.0
+offset_right = 1411.0
+offset_bottom = 717.0
+color = Color(0.8821442, 0.6458976, 0.47954023, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect3/StaticBody2D"]
+position = Vector2(35.5, 684)
+shape = SubResource("RectangleShape2D_8kgoq")
+
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = -1274.0
 offset_top = -664.0
@@ -154,7 +169,7 @@ limit_x = 2
 limit_y = 2
 
 [node name="CollisionShape2D" parent="CameraLimiters/CameraLimiter1" index="0"]
-position = Vector2(1562, -323)
+position = Vector2(1520, -373)
 
 [node name="LimitPosition" parent="CameraLimiters/CameraLimiter1" index="1"]
 position = Vector2(1567, 132)
@@ -179,11 +194,11 @@ position = Vector2(2.5, 348)
 shape = SubResource("RectangleShape2D_6bxjy")
 
 [node name="Wall2ExitRight2" type="Area2D" parent="."]
-position = Vector2(1375.145, 675.895)
+position = Vector2(1374, 683)
 script = ExtResource("8_65tcn")
 
 [node name="RectangleShape2D" type="CollisionShape2D" parent="Wall2ExitRight2"]
-position = Vector2(-40.14502, -49.89502)
+position = Vector2(-74.14502, -72.89502)
 shape = SubResource("RectangleShape2D_3lsls")
 
 [node name="Wall2SpawnLeft" type="Marker2D" parent="."]

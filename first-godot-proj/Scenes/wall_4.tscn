@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2ojh7o6jaf53"]
+[gd_scene load_steps=24 format=3 uid="uid://b2ojh7o6jaf53"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_l7jo2"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="3_764fs"]
@@ -6,7 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="5_4q4py"]
 [ext_resource type="Script" uid="uid://bw1mn011d2e6p" path="res://Scenes/wall_3_exit_right_2.gd" id="6_3n7aw"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="6_yxvh4"]
-[ext_resource type="Texture2D" uid="uid://dtibnk780ocrd" path="res://Assets/TreesAndFlowers/Tree3.PNG" id="8_0b6qi"]
+[ext_resource type="Texture2D" uid="uid://dwl2uh424jlsa" path="res://Assets/TreesAndFlowers/flower2.PNG" id="7_0to1t"]
+[ext_resource type="Texture2D" uid="uid://bb2pxi4nva6s3" path="res://Assets/Furniture/Bed.png" id="7_3n7aw"]
+[ext_resource type="Texture2D" uid="uid://m6g6r1ibg83a" path="res://Assets/TreesAndFlowers/Tree2.PNG" id="7_vbdoy"]
+[ext_resource type="Texture2D" uid="uid://bvlkad1d1cchc" path="res://Assets/animals/Untitled_Artwork-2 5.png" id="8_4q4py"]
+[ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="9_764fs"]
+[ext_resource type="Texture2D" uid="uid://bjcodcsmhdtcv" path="res://Assets/Furniture/ShelfWithBooks.png" id="12_4q4py"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 5.0
@@ -23,10 +28,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-1084, -352)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MovingCloud2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-615, 119)]
+}
 
 [sub_resource type="Animation" id="Animation_w4dla"]
 resource_name = "moving_cloud"
-length = 8.5
+length = 2.5
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -35,10 +52,22 @@ tracks/0/path = NodePath("../MovingCloud1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 4, 4.5, 6.99, 8.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1084, -352), Vector2(-1084, -352), Vector2(-1084, 388), Vector2(-1084, 388), Vector2(-1084, -352), Vector2(-1084, -352)]
+"values": [Vector2(-1232, 381), Vector2(-833, 117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MovingCloud2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-309, 119), Vector2(-615, 119)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3lsls"]
@@ -62,6 +91,15 @@ size = Vector2(87, 716)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lsls"]
 size = Vector2(97.57251, 215.89502)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxvh4"]
+size = Vector2(922.9487, 982.562)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkkfo"]
+size = Vector2(169.75192, 264.39935)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b6qi"]
+size = Vector2(754.1199, 536.00745)
+
 [node name="Wall1" type="Node2D"]
 script = ExtResource("1_l7jo2")
 
@@ -72,10 +110,10 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1199.0
-offset_top = -661.0
-offset_right = 1350.0
-offset_bottom = 718.0
+offset_left = -1203.0
+offset_top = -663.0
+offset_right = 1346.0
+offset_bottom = 716.0
 color = Color(0.6392157, 0.8352941, 1, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -100,6 +138,19 @@ texture = ExtResource("3_764fs")
 position = Vector2(266, 277.25)
 shape = SubResource("RectangleShape2D_65tcn")
 
+[node name="MovingCloud2" type="AnimatableBody2D" parent="."]
+position = Vector2(-615, 119)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingCloud2"]
+position = Vector2(265, 276)
+scale = Vector2(0.13636369, 0.13636367)
+texture = ExtResource("3_764fs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCloud2"]
+position = Vector2(266, 277.25)
+shape = SubResource("RectangleShape2D_65tcn")
+
 [node name="Floor1" type="Sprite2D" parent="."]
 position = Vector2(-442.24997, 480.25003)
 scale = Vector2(0.7065678, 0.4417683)
@@ -112,7 +163,7 @@ texture = ExtResource("4_0to1t")
 flip_h = true
 
 [node name="Player" parent="." instance=ExtResource("5_4q4py")]
-position = Vector2(-1173, -173)
+position = Vector2(-1180, 664)
 
 [node name="FloorCollision" type="StaticBody2D" parent="."]
 position = Vector2(63, 173)
@@ -134,6 +185,27 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(35.5, 684)
 shape = SubResource("RectangleShape2D_8kgoq")
 
+[node name="ColorRect2" type="ColorRect" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 55.54286
+anchor_top = 0.48405796
+anchor_right = 55.54286
+anchor_bottom = 0.48405796
+offset_left = -1274.0
+offset_top = -664.0
+offset_right = -1204.0
+offset_bottom = 716.0
+color = Color(0.8821442, 0.6458976, 0.47954023, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect2/ColorRect2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect2/ColorRect2/StaticBody2D"]
+position = Vector2(35.5, 684)
+shape = SubResource("RectangleShape2D_8kgoq")
+
 [node name="CameraLimiters" type="Node2D" parent="."]
 
 [node name="CameraLimiter1" parent="CameraLimiters" instance=ExtResource("6_yxvh4")]
@@ -142,10 +214,11 @@ limit_x = 2
 limit_y = 2
 
 [node name="CollisionShape2D" parent="CameraLimiters/CameraLimiter1" index="0"]
-position = Vector2(1562, -323)
+visible = false
+position = Vector2(1520, -153)
 
 [node name="LimitPosition" parent="CameraLimiters/CameraLimiter1" index="1"]
-position = Vector2(1494, 12)
+position = Vector2(1567, 134)
 
 [node name="CameraLimiter2" parent="CameraLimiters" instance=ExtResource("6_yxvh4")]
 position = Vector2(-217, 707)
@@ -171,31 +244,84 @@ position = Vector2(1375.145, 675.895)
 script = ExtResource("6_3n7aw")
 
 [node name="RectangleShape2D" type="CollisionShape2D" parent="Wall3ExitRight2"]
-position = Vector2(-48.14502, -71.89502)
+position = Vector2(-36.14502, -933.895)
 shape = SubResource("RectangleShape2D_3lsls")
 
 [node name="Wall2SpawnLeft" type="Marker2D" parent="."]
 position = Vector2(-1133, -809)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1224, 637)
+scale = Vector2(0.10512572, 0.09718055)
+texture = ExtResource("7_0to1t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-23.90332, 311.34912)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_yxvh4")
+
 [node name="Clouds" type="Sprite2D" parent="."]
 position = Vector2(-311, 357)
 scale = Vector2(0.47881106, 0.44262356)
 
-[node name="Tree3" type="Sprite2D" parent="."]
-position = Vector2(-311, 357)
-scale = Vector2(0.47881106, 0.44262356)
-texture = ExtResource("8_0b6qi")
+[node name="UntitledArtwork25" type="Sprite2D" parent="."]
+position = Vector2(1230, 1012)
+scale = Vector2(0.71280485, 0.7555919)
+texture = ExtResource("8_4q4py")
+flip_h = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Tree3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="UntitledArtwork25"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree3/StaticBody2D"]
-polygon = PackedVector2Array(-766.482, -11.296265, -724.71185, -117.48132, -678.7647, -286.92554, -549.2773, -318.5551, -472.0025, -393.11057, -302.8335, -375.03653, -181.70013, -304.99957, -62.655212, -221.4071, -91.89429, -67.77765, -221.38171, -56.481384, -338.33813, 13.555542, -478.268, 9.037048, -609.84393, 81.33325)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UntitledArtwork25/StaticBody2D"]
+position = Vector2(-164.8418, -522.9159)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_nkkfo")
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tree3/StaticBody2D"]
-polygon = PackedVector2Array(-344.60364, -569.3326, -304.922, -634.851, -194.23114, -695.85095, -139.93, -781.7027, 83.54022, -817.85077, 215.11618, -820.11005, 296.56793, -754.5916, 417.70132, -731.999, 486.62204, -637.1102, 568.0738, -569.3326, 582.69336, -445.0735, 461.55997, -365.9995, 317.453, -295.96252, 162.9035, -350.1847, 16.708008, -377.29578, -164.99207, -399.88834, -321.63007, -447.33273)
+[node name="Tree2" type="Sprite2D" parent="."]
+position = Vector2(811.00006, 374)
+scale = Vector2(0.4469512, 0.44695124)
+texture = ExtResource("7_vbdoy")
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Tree3/StaticBody2D"]
-polygon = PackedVector2Array(89.805786, -15.814758, 133.66443, -49.703613, 200.49661, -51.96289, 271.50586, -131.03687, 361.31165, -155.88867, 415.6128, -124.259094, 501.24158, -151.37012, 641.1715, -88.11096, 680.85315, -22.59253, 766.48193, 22.59259, 795.72107, 119.7406, 789.4555, 192.03687, 818.6946, 264.333, 783.19, 345.66626, 695.4727, 381.81433, 593.13586, 336.62927, 486.62204, 352.44397, 348.7806, 234.96265, 202.58514, 173.96277, 110.69086, 126.51837, 73.09772, 33.888855)
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree2/StaticBody2D"]
+polygon = PackedVector2Array(-304.28394, -239.39972, -458.6632, -241.63715, -568.2948, -264.01093, -621.99194, -333.36972, -624.22925, -440.76398, -364.6931, -465.37518, -371.40527, -642.12823, -230.45032, -635.4161, -219.26343, -767.4215, -118.5813, -769.65894, -71.59631, -919.5634, -13.424438, -917.32605, 268.48547, -809.93176, 344.55652, -512.36017, 577.244, -478.79944, 691.35046, -284.14734, 778.6083, -152.1419, 787.55774, -98.44476, 575.0067, -67.12146, 344.55652, -221.50067, -158.85413, -272.96045)
+
+[node name="Bed" type="Sprite2D" parent="."]
+position = Vector2(564.0001, 622)
+scale = Vector2(0.42012447, 0.42012447)
+texture = ExtResource("7_3n7aw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bed"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bed/StaticBody2D"]
+position = Vector2(7.140381, 0)
+polygon = PackedVector2Array(-1159.1807, 452.24695, -1159.1807, -383.21973, -1130.6177, -390.36047, -1075.872, -440.3457, -1075.872, -459.38763, -1021.1263, -457.0074, -1021.1263, -445.1062, 1011.6046, -447.48645, 1011.6046, -461.76788, 1071.111, -457.0074, 1073.4911, -435.5852, 1116.3356, -392.74072, 1152.0394, -392.74072, 1159.18, 457.00745, 1152.0394, 466.52844, 1090.153, 464.1482)
+
+[node name="Bird" type="Sprite2D" parent="."]
+position = Vector2(367, 413)
+scale = Vector2(0.21859755, 0.21859755)
+texture = ExtResource("9_764fs")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bird"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bird/StaticBody2D"]
+polygon = PackedVector2Array(0, 0, -87.633575, -29.211182, -150.229, -95.979614, -212.8244, -83.46057, -308.80408, -125.190796, -383.91858, -183.61316, -429.8219, -250.38159, -471.5522, -321.32312, -521.6285, -421.4757, -467.37915, -425.6488, -350.53436, -367.22644, -262.90076, -287.93884, -254.55469, -304.63098, -250.38165, -404.7837, -229.51654, -446.51392, -183.61322, -467.37903, -191.95929, -513.28235, -158.57507, -484.07117, -146.05597, -521.6284, -121.01782, -492.41724, -41.730286, -484.07117, 16.692108, -450.687, 58.422394, -396.43762, 58.422394, -317.15002, 66.76845, -300.458, 62.595413, -275.4198, 112.67175, -300.458, 200.30534, -379.74548, 296.28497, -396.43762, 417.3028, -413.12976, 446.51398, -425.6488, 492.4173, -425.6488, 425.64886, -321.32312, 392.26465, -254.55469, 312.9771, -166.92114, 229.51654, -104.32568, 200.30534, -87.633545, 296.28497, -41.730225, 325.4962, -4.1729736, 312.9771, 20.865112, 287.93893, 33.384277, 258.72772, 45.90332, 221.17049, 62.59546, 137.70993, -12.519043)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1362.9999, -72)
+scale = Vector2(0.35670736, 0.32835364)
+texture = ExtResource("12_4q4py")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+position = Vector2(-323.79492, 30.455063)
+scale = Vector2(1.0000001, 1.0000004)
+shape = SubResource("RectangleShape2D_0b6qi")
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
