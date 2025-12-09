@@ -1,13 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://c21xaksqqjmwv"]
+[gd_scene load_steps=21 format=3 uid="uid://c21xaksqqjmwv"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_2apbk"]
 [ext_resource type="Texture2D" uid="uid://bjcodcsmhdtcv" path="res://Assets/Furniture/ShelfWithBooks.png" id="2_eda4v"]
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="3_fdxbv"]
 [ext_resource type="Texture2D" uid="uid://cj4i8qfqklsnm" path="res://Assets/Furniture/Floor.png" id="3_u887v"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="8_0cot6"]
+[ext_resource type="Texture2D" uid="uid://dwl2uh424jlsa" path="res://Assets/TreesAndFlowers/flower2.PNG" id="8_2apbk"]
 [ext_resource type="Script" uid="uid://tpsksabhkuko" path="res://Scenes/wall_2_exit_right_2.gd" id="8_65tcn"]
 [ext_resource type="Texture2D" uid="uid://dtibnk780ocrd" path="res://Assets/TreesAndFlowers/Tree3.PNG" id="8_un04c"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="9_i6n5y"]
+[ext_resource type="Texture2D" uid="uid://c0iwni4hs268n" path="res://Assets/TreesAndFlowers/flower1.PNG" id="9_wg1e8"]
+[ext_resource type="Texture2D" uid="uid://bs3ajq776nju1" path="res://Assets/TreesAndFlowers/flower3.PNG" id="10_fdxbv"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 5.0
@@ -82,6 +85,7 @@ offset_right = 1350.0
 offset_bottom = 718.0
 color = Color(0.6392157, 0.8352941, 1, 1)
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect"]
 layout_mode = 0
@@ -119,12 +123,14 @@ shape = SubResource("RectangleShape2D_65tcn")
 position = Vector2(-442.24997, 480.25003)
 scale = Vector2(0.7065678, 0.4417683)
 texture = ExtResource("3_u887v")
+metadata/_edit_lock_ = true
 
 [node name="Floor2" type="Sprite2D" parent="."]
 position = Vector2(1183, 483.0001)
 scale = Vector2(0.675, 0.43719512)
 texture = ExtResource("3_u887v")
 flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("3_fdxbv")]
 position = Vector2(-1173, -173)
@@ -213,8 +219,23 @@ position = Vector2(1866.0267, -355.3067)
 rotation = -0.38920844
 texture = ExtResource("8_0cot6")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1060, 619)
+scale = Vector2(0.11798781, 0.11798782)
+texture = ExtResource("8_2apbk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(2398.553, -186.46019)
+scale = Vector2(1.2751936, 1.2751936)
+texture = ExtResource("9_wg1e8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D"]
+position = Vector2(4612.605, 39.878357)
+scale = Vector2(0.8862717, 0.8862718)
+texture = ExtResource("10_fdxbv")
+
 [node name="Tree3" type="Sprite2D" parent="."]
-position = Vector2(-311, 357)
+position = Vector2(-315, 369)
 scale = Vector2(0.47881106, 0.44262356)
 texture = ExtResource("8_un04c")
 
