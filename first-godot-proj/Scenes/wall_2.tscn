@@ -34,40 +34,60 @@ size = Vector2(70, 1380)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kgoq"]
 size = Vector2(73, 1388)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4dla"]
-size = Vector2(198, 95.5)
-
 [sub_resource type="Animation" id="Animation_76c2s"]
-length = 5.0
-loop_mode = 1
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../MovingCloud1:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1084, -352)]
+"values": [Vector2(7, 23)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MovingCloud2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(317, -186)]
 }
 
 [sub_resource type="Animation" id="Animation_w4dla"]
 resource_name = "moving_cloud"
-length = 8.5
+length = 3.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../MovingCloud1:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 4, 4.5, 6.99, 8.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1084, -352), Vector2(-1084, -352), Vector2(-1084, 388), Vector2(-1084, 388), Vector2(-1084, -352), Vector2(-1084, -352)]
+"values": [Vector2(7, 221), Vector2(7, -186)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MovingCloud2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(317, -186), Vector2(317, 221)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3lsls"]
@@ -75,6 +95,9 @@ _data = {
 &"RESET": SubResource("Animation_76c2s"),
 &"moving_cloud": SubResource("Animation_w4dla")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4dla"]
+size = Vector2(198, 95.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bxjy"]
 size = Vector2(87, 716)
@@ -300,6 +323,12 @@ position = Vector2(454.86002, 258.72775)
 scale = Vector2(0.39732146, 0.39732146)
 polygon = PackedVector2Array(0, 0, -87.633575, -29.211182, -150.229, -95.979614, -212.8244, -83.46057, -308.80408, -125.190796, -383.91858, -183.61316, -429.8219, -250.38159, -471.5522, -321.32312, -521.6285, -421.4757, -467.37915, -425.6488, -350.53436, -367.22644, -262.90076, -287.93884, -254.55469, -304.63098, -250.38165, -404.7837, -229.51654, -446.51392, -183.61322, -467.37903, -191.95929, -513.28235, -158.57507, -484.07117, -146.05597, -521.6284, -121.01782, -492.41724, -41.730286, -484.07117, 16.692108, -450.687, 58.422394, -396.43762, 58.422394, -317.15002, 66.76845, -300.458, 62.595413, -275.4198, 112.67175, -300.458, 200.30534, -379.74548, 296.28497, -396.43762, 417.3028, -413.12976, 446.51398, -425.6488, 492.4173, -425.6488, 425.64886, -321.32312, 392.26465, -254.55469, 312.9771, -166.92114, 229.51654, -104.32568, 200.30534, -87.633545, 296.28497, -41.730225, 325.4962, -4.1729736, 312.9771, 20.865112, 287.93893, 33.384277, 258.72772, 45.90332, 221.17049, 62.59546, 137.70993, -12.519043)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MovingCloud1")
+libraries = {
+&"": SubResource("AnimationLibrary_3lsls")
+}
+
 [node name="MovingCloud1" type="AnimatableBody2D" parent="."]
 position = Vector2(7, 23)
 metadata/_edit_group_ = true
@@ -312,11 +341,6 @@ texture = ExtResource("9_5yaec")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCloud1"]
 position = Vector2(266, 277.25)
 shape = SubResource("RectangleShape2D_w4dla")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_3lsls")
-}
 
 [node name="BarrierWall" type="StaticBody2D" parent="."]
 visible = false

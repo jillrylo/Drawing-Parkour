@@ -160,7 +160,7 @@ limit_y = 2
 position = Vector2(1562, -323)
 
 [node name="LimitPosition" parent="CameraLimiters/CameraLimiter1" index="1"]
-position = Vector2(1494, 12)
+position = Vector2(1567, 132)
 
 [node name="CameraLimiter2" parent="CameraLimiters" instance=ExtResource("9_i6n5y")]
 position = Vector2(-217, 707)
@@ -193,8 +193,25 @@ shape = SubResource("RectangleShape2D_3lsls")
 position = Vector2(-1133, -809)
 
 [node name="Clouds" type="Sprite2D" parent="."]
-position = Vector2(-311, 357)
-scale = Vector2(0.47881106, 0.44262356)
+position = Vector2(-904, -504.99997)
+scale = Vector2(0.29457268, 0.27230948)
+texture = ExtResource("8_0cot6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds"]
+position = Vector2(2226.9548, 102.8241)
+rotation = -0.28797933
+scale = Vector2(1.0777248, 1.0777248)
+texture = ExtResource("8_0cot6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds/Sprite2D"]
+position = Vector2(1953.1575, 770.45654)
+rotation = 0.4886922
+texture = ExtResource("8_0cot6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds/Sprite2D/Sprite2D"]
+position = Vector2(1866.0267, -355.3067)
+rotation = -0.38920844
+texture = ExtResource("8_0cot6")
 
 [node name="Tree3" type="Sprite2D" parent="."]
 position = Vector2(-311, 357)
