@@ -424,6 +424,7 @@ texture = ExtResource("18_g62e1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_jid5e")
+volume_db = -3.0
 autoplay = true
 
 [editable path="CameraLimiters/CameraLimiter1"]

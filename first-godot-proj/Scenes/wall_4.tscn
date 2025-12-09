@@ -200,6 +200,7 @@ polygon = PackedVector2Array(89.805786, -15.814758, 133.66443, -49.703613, 200.4
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_l7jo2")
+volume_db = -3.0
 autoplay = true
 
 [editable path="CameraLimiters/CameraLimiter1"]

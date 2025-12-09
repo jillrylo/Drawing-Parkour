@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dupbj03k0vldf"]
+[gd_scene load_steps=26 format=3 uid="uid://dupbj03k0vldf"]
 
 [ext_resource type="Script" uid="uid://dp10ltjbirfsx" path="res://Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://c4yy65hhgapgc" path="res://Player/newplayer.png" id="2_7emwf"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://dvvng710hd6gu" path="res://Scripts/player_interactions.gd" id="11_5htga"]
 [ext_resource type="Script" uid="uid://ci5onq8ppxxpm" path="res://Scripts/camera_limit_manager.gd" id="13_p5o4e"]
 [ext_resource type="PackedScene" uid="uid://cbpo60fx6q8kc" path="res://Scenes/camera.tscn" id="20_7emwf"]
+[ext_resource type="AudioStream" uid="uid://ga30pxl5xwbv" path="res://Sound/Jump Sound Effect.mp3" id="22_hshwv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_my0ql"]
 animations = [{
@@ -127,6 +128,9 @@ shape = SubResource("RectangleShape2D_gu6f8")
 [node name="CameraLimitManager" type="Node2D" parent="Camera" node_paths=PackedStringArray("camera")]
 script = ExtResource("13_p5o4e")
 camera = NodePath("..")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_hshwv")
 
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_entered" from="InteractionArea" to="InteractionArea" method="_on_area_entered"]
