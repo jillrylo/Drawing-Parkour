@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2ojh7o6jaf53"]
+[gd_scene load_steps=17 format=3 uid="uid://b2ojh7o6jaf53"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_l7jo2"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="3_764fs"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bw1mn011d2e6p" path="res://Scenes/wall_3_exit_right_2.gd" id="6_3n7aw"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="6_yxvh4"]
 [ext_resource type="Texture2D" uid="uid://dtibnk780ocrd" path="res://Assets/TreesAndFlowers/Tree3.PNG" id="8_0b6qi"]
+[ext_resource type="AudioStream" uid="uid://ci0c10onglmt7" path="res://Sound/hipsters-soundroll-main-version-1780-02-47.mp3" id="8_l7jo2"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 5.0
@@ -196,6 +197,10 @@ polygon = PackedVector2Array(-344.60364, -569.3326, -304.922, -634.851, -194.231
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Tree3/StaticBody2D"]
 polygon = PackedVector2Array(89.805786, -15.814758, 133.66443, -49.703613, 200.49661, -51.96289, 271.50586, -131.03687, 361.31165, -155.88867, 415.6128, -124.259094, 501.24158, -151.37012, 641.1715, -88.11096, 680.85315, -22.59253, 766.48193, 22.59259, 795.72107, 119.7406, 789.4555, 192.03687, 818.6946, 264.333, 783.19, 345.66626, 695.4727, 381.81433, 593.13586, 336.62927, 486.62204, 352.44397, 348.7806, 234.96265, 202.58514, 173.96277, 110.69086, 126.51837, 73.09772, 33.888855)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_l7jo2")
+autoplay = true
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
