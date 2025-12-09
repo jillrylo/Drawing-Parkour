@@ -283,7 +283,7 @@ limit_y = 2
 position = Vector2(1562, -323)
 
 [node name="LimitPosition" parent="CameraLimiters/CameraLimiter1" index="1"]
-position = Vector2(1619, 135)
+position = Vector2(1606, 135)
 
 [node name="CameraLimiter2" parent="CameraLimiters" instance=ExtResource("10_jid5e")]
 position = Vector2(-217, 707)
