@@ -1,12 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://bx8dv3meoyyfc"]
+[gd_scene load_steps=16 format=3 uid="uid://bx8dv3meoyyfc"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_bl0yc"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="2_klhag"]
+[ext_resource type="Texture2D" uid="uid://bjcodcsmhdtcv" path="res://Assets/Furniture/ShelfWithBooks.png" id="3_bl0yc"]
 [ext_resource type="Texture2D" uid="uid://cj4i8qfqklsnm" path="res://Assets/Furniture/Floor.png" id="3_tnfjk"]
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="4_4kqrr"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="5_gjkgo"]
 [ext_resource type="AudioStream" uid="uid://x8xh8vxi1kdp" path="res://Sound/ES_Maiden Voyage - Helmut Schenker.mp3" id="7_bl0yc"]
-[ext_resource type="Texture2D" uid="uid://dtibnk780ocrd" path="res://Assets/TreesAndFlowers/Tree3.PNG" id="7_q5ntl"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 5.0
@@ -49,6 +49,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65tcn"]
 size = Vector2(198, 95.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klhag"]
+size = Vector2(754.1199, 536.00745)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 distance = -542.0
@@ -97,6 +100,21 @@ texture = ExtResource("2_klhag")
 position = Vector2(266, 277.25)
 shape = SubResource("RectangleShape2D_65tcn")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-1249, -53)
+scale = Vector2(0.526465, 0.32835364)
+texture = ExtResource("3_bl0yc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+position = Vector2(427.37878, 60.909958)
+scale = Vector2(1.0000001, 1.0000004)
+shape = SubResource("RectangleShape2D_klhag")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sprite2D2"]
+autoplay = true
+
 [node name="Floor1" type="Sprite2D" parent="."]
 position = Vector2(-442.24997, 480.25003)
 scale = Vector2(0.7065678, 0.4417683)
@@ -142,7 +160,7 @@ limit_y = 2
 position = Vector2(1562, -323)
 
 [node name="LimitPosition" parent="CameraLimiters/CameraLimiter1" index="1"]
-position = Vector2(1494, 12)
+position = Vector2(1567, 134)
 
 [node name="CameraLimiter2" parent="CameraLimiters" instance=ExtResource("5_gjkgo")]
 position = Vector2(-217, 707)
@@ -169,22 +187,6 @@ position = Vector2(-1133, -809)
 [node name="Clouds" type="Sprite2D" parent="."]
 position = Vector2(-311, 357)
 scale = Vector2(0.47881106, 0.44262356)
-
-[node name="Tree3" type="Sprite2D" parent="."]
-position = Vector2(-311, 357)
-scale = Vector2(0.47881106, 0.44262356)
-texture = ExtResource("7_q5ntl")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Tree3"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree3/StaticBody2D"]
-polygon = PackedVector2Array(-766.482, -11.296265, -724.71185, -117.48132, -678.7647, -286.92554, -549.2773, -318.5551, -472.0025, -393.11057, -302.8335, -375.03653, -181.70013, -304.99957, -62.655212, -221.4071, -91.89429, -67.77765, -221.38171, -56.481384, -338.33813, 13.555542, -478.268, 9.037048, -609.84393, 81.33325)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tree3/StaticBody2D"]
-polygon = PackedVector2Array(-344.60364, -569.3326, -304.922, -634.851, -194.23114, -695.85095, -139.93, -781.7027, 83.54022, -817.85077, 215.11618, -820.11005, 296.56793, -754.5916, 417.70132, -731.999, 486.62204, -637.1102, 568.0738, -569.3326, 582.69336, -445.0735, 461.55997, -365.9995, 317.453, -295.96252, 162.9035, -350.1847, 16.708008, -377.29578, -164.99207, -399.88834, -321.63007, -447.33273)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Tree3/StaticBody2D"]
-polygon = PackedVector2Array(89.805786, -15.814758, 133.66443, -49.703613, 200.49661, -51.96289, 271.50586, -131.03687, 361.31165, -155.88867, 415.6128, -124.259094, 501.24158, -151.37012, 641.1715, -88.11096, 680.85315, -22.59253, 766.48193, 22.59259, 795.72107, 119.7406, 789.4555, 192.03687, 818.6946, 264.333, 783.19, 345.66626, 695.4727, 381.81433, 593.13586, 336.62927, 486.62204, 352.44397, 348.7806, 234.96265, 202.58514, 173.96277, 110.69086, 126.51837, 73.09772, 33.888855)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_bl0yc")
