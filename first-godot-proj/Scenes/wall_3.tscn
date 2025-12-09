@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c21xaksqqjmwv"]
+[gd_scene load_steps=29 format=3 uid="uid://c21xaksqqjmwv"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_2apbk"]
 [ext_resource type="Texture2D" uid="uid://bjcodcsmhdtcv" path="res://Assets/Furniture/ShelfWithBooks.png" id="2_eda4v"]
@@ -13,6 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://bs3ajq776nju1" path="res://Assets/TreesAndFlowers/flower3.PNG" id="10_fdxbv"]
 [ext_resource type="Texture2D" uid="uid://c4paamtuwf0hu" path="res://Assets/animals/Untitled_Artwork-1 5.png" id="12_wg1e8"]
 [ext_resource type="AudioStream" uid="uid://bepd7a8s5fcro" path="res://Sound/boardwalk-jaunt-sky-toes-main-version-35005-02-28.mp3" id="13_fdxbv"]
+[ext_resource type="Texture2D" uid="uid://cxxcqk1p6a7nx" path="res://Assets/TreesAndFlowers/Tree4.PNG" id="14_0cot6"]
+[ext_resource type="Texture2D" uid="uid://dn3do8dhst743" path="res://Assets/animals/Untitled_Artwork-1 4.png" id="15_i6n5y"]
+[ext_resource type="Texture2D" uid="uid://bvlkad1d1cchc" path="res://Assets/animals/Untitled_Artwork-2 5.png" id="16_owjur"]
+[ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="17_r6mmu"]
+[ext_resource type="Texture2D" uid="uid://c7t1bttrtjxkn" path="res://Assets/Furniture/FrontBasket.PNG" id="18_of6jq"]
 
 [sub_resource type="Animation" id="Animation_76c2s"]
 length = 5.0
@@ -271,10 +276,11 @@ polygon = PackedVector2Array(-344.60364, -569.3326, -304.922, -634.851, -194.231
 polygon = PackedVector2Array(89.805786, -15.814758, 133.66443, -49.703613, 200.49661, -51.96289, 271.50586, -131.03687, 361.31165, -155.88867, 415.6128, -124.259094, 501.24158, -151.37012, 641.1715, -88.11096, 680.85315, -22.59253, 766.48193, 22.59259, 795.72107, 119.7406, 789.4555, 192.03687, 818.6946, 264.333, 783.19, 345.66626, 695.4727, 381.81433, 593.13586, 336.62927, 486.62204, 352.44397, 348.7806, 234.96265, 202.58514, 173.96277, 110.69086, 126.51837, 73.09772, 33.888855)
 
 [node name="UntitledArtwork15" type="Sprite2D" parent="."]
-position = Vector2(82.99994, 1301)
+position = Vector2(-22, 1295)
 scale = Vector2(0.7932927, 0.7932927)
 texture = ExtResource("12_wg1e8")
 flip_h = true
+metadata/_edit_group_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="UntitledArtwork15"]
 position = Vector2(815.588, -6.3027344)
@@ -287,6 +293,67 @@ shape = SubResource("RectangleShape2D_wg1e8")
 stream = ExtResource("13_fdxbv")
 volume_db = -3.0
 autoplay = true
+
+[node name="Tree2" type="Sprite2D" parent="."]
+position = Vector2(-1059, 535)
+scale = Vector2(0.19695137, 0.19695137)
+texture = ExtResource("14_0cot6")
+
+[node name="UntitledArtwork14" type="Sprite2D" parent="."]
+position = Vector2(346, 528)
+texture = ExtResource("15_i6n5y")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="UntitledArtwork14"]
+position = Vector2(220, -181)
+texture = ExtResource("15_i6n5y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="UntitledArtwork14"]
+position = Vector2(730, 788)
+texture = ExtResource("12_wg1e8")
+
+[node name="Sprite2D" type="Sprite2D" parent="UntitledArtwork14"]
+position = Vector2(209, 490)
+texture = ExtResource("16_owjur")
+
+[node name="Bird2" type="Sprite2D" parent="UntitledArtwork14/Sprite2D"]
+position = Vector2(233, -585)
+scale = Vector2(0.3006412, 0.30064127)
+texture = ExtResource("17_r6mmu")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="UntitledArtwork14/Sprite2D"]
+position = Vector2(665, 430)
+
+[node name="Sprite2D" type="Sprite2D" parent="UntitledArtwork14/Sprite2D/Sprite2D2"]
+position = Vector2(-114, -982)
+texture = ExtResource("15_i6n5y")
+flip_h = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UntitledArtwork14/Sprite2D"]
+position = Vector2(665, 430)
+texture = ExtResource("12_wg1e8")
+
+[node name="Sprite2D" type="Sprite2D" parent="UntitledArtwork14/Sprite2D/Sprite2D"]
+position = Vector2(-63, -450)
+texture = ExtResource("16_owjur")
+flip_h = true
+
+[node name="Bird" type="Sprite2D" parent="UntitledArtwork14/Sprite2D"]
+position = Vector2(356, -445)
+scale = Vector2(0.35792682, 0.35792685)
+texture = ExtResource("17_r6mmu")
+
+[node name="FrontBasket" type="Sprite2D" parent="UntitledArtwork14/Sprite2D"]
+position = Vector2(271.00006, -433)
+scale = Vector2(0.4429115, 0.36875007)
+texture = ExtResource("18_of6jq")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="UntitledArtwork14/Sprite2D/FrontBasket"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UntitledArtwork14/Sprite2D/FrontBasket/StaticBody2D"]
+polygon = PackedVector2Array(-596.056, 442.0338, -684.10974, -75.93213, -756.359, -273.89832, -747.3279, -363.38977, -663.7897, -338.98303, -675.0786, -683.3897, -580.2516, -748.4744, -519.29126, -748.4744, -392.85522, -854.2371, -286.73914, -870.50836, -198.68542, -835.2541, -185.1388, -927.45746, -178.36536, -1033.2202, -106.11621, -1006.10156, -76.76489, -959.9998, 58.70227, -954.5761, 173.84949, -1022.37274, 200.94287, -968.13544, 167.07605, -832.54224, 214.48975, -759.3219, 370.27686, -903.0507, 438.0105, -865.0846, 383.82373, -799.9999, 377.0503, -661.6948, 476.39307, -634.5762, 562.18896, -471.86438, 593.79785, -347.11853, 584.76685, 371.5254)
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
