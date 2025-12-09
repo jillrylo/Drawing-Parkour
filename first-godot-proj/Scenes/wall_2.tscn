@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b5y2yi4ur3f48" path="res://Assets/TreesAndFlowers/Tree1BranchesandTrunk.png" id="5_ah2xq"]
 [ext_resource type="Texture2D" uid="uid://c0iwni4hs268n" path="res://Assets/TreesAndFlowers/flower1.PNG" id="6_os2aa"]
 [ext_resource type="Texture2D" uid="uid://bs3ajq776nju1" path="res://Assets/TreesAndFlowers/flower3.PNG" id="7_l6yjg"]
-[ext_resource type="PackedScene" uid="uid://blbcv5qepupo" path="res://Assets/DresserModel1.glb" id="8_47hvw"]
+[ext_resource type="PackedScene" uid="uid://blbcv5qepupo" path="res://Assets/Furniture/DresserModel1.glb" id="8_47hvw"]
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="9_5yaec"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="10_jid5e"]
 [ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="11_gbkhu"]

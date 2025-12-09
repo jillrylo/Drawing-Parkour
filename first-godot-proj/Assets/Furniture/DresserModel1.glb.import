@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://blbcv5qepupo"
-path="res://.godot/imported/DresserModel1.glb-340e7b8b84776ce9427df836de1d6f26.scn"
+path="res://.godot/imported/DresserModel1.glb-9c107386d91aaa404beaa2c36c77b805.scn"
 
 [deps]
 
-source_file="res://Assets/DresserModel1.glb"
-dest_files=["res://.godot/imported/DresserModel1.glb-340e7b8b84776ce9427df836de1d6f26.scn"]
+source_file="res://Assets/Furniture/DresserModel1.glb"
+dest_files=["res://.godot/imported/DresserModel1.glb-9c107386d91aaa404beaa2c36c77b805.scn"]
 
 [params]
 
