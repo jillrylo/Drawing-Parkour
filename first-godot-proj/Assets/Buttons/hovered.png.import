@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djdauwhvfst64"
-path="res://.godot/imported/StartPressedFORNOW.png-6d9d5fde7ed1164d9ca58e2608a75d71.ctex"
+uid="uid://j6wtoixlesrh"
+path="res://.godot/imported/hovered.png-3f8569a692ad2ab4e014794f93b76435.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/StartPressedFORNOW.png"
-dest_files=["res://.godot/imported/StartPressedFORNOW.png-6d9d5fde7ed1164d9ca58e2608a75d71.ctex"]
+source_file="res://Assets/Buttons/hovered.png"
+dest_files=["res://.godot/imported/hovered.png-3f8569a692ad2ab4e014794f93b76435.ctex"]
 
 [params]
 
