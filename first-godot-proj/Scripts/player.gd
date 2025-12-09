@@ -38,3 +38,9 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+
+
+func _on_interaction_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Portal"):
+		position.x = -1133
+		position.y = -809

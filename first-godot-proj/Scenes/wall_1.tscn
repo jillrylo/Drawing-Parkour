@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://cdfwii4l64gjt"]
+[gd_scene load_steps=19 format=3 uid="uid://cdfwii4l64gjt"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_pmwcp"]
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="1_xghsi"]
-[ext_resource type="PackedScene" uid="uid://pns3a4vfsgd1" path="res://Scenes/transition_to_next_wall.tscn" id="3_ew77b"]
 [ext_resource type="Texture2D" uid="uid://dhkl4tvmq38th" path="res://Assets/TreesAndFlowers/Tree1Leaves.png" id="4_ub6k7"]
 [ext_resource type="Texture2D" uid="uid://b5y2yi4ur3f48" path="res://Assets/TreesAndFlowers/Tree1BranchesandTrunk.png" id="5_81nt5"]
 [ext_resource type="Texture2D" uid="uid://c0iwni4hs268n" path="res://Assets/TreesAndFlowers/flower1.PNG" id="6_iwffm"]
@@ -120,9 +119,6 @@ position = Vector2(63, 173)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloorCollision"]
 shape = SubResource("WorldBoundaryShape2D_qxrlw")
 
-[node name="TransitionToNextWall" parent="." instance=ExtResource("3_ew77b")]
-position = Vector2(1235, 666)
-
 [node name="Tree1BranchesandTrunk" type="Sprite2D" parent="."]
 position = Vector2(-623, 379)
 scale = Vector2(0.4487805, 0.4487805)
@@ -218,7 +214,7 @@ limit_y = 2
 position = Vector2(1472, -314)
 
 [node name="LimitPosition" parent="CameraLimiters/CameraLimiter1" index="1"]
-position = Vector2(1620, -9)
+position = Vector2(1494, 12)
 
 [node name="CameraLimiter2" parent="CameraLimiters" instance=ExtResource("10_w4dla")]
 position = Vector2(-217, 707)
