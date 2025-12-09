@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cdfwii4l64gjt"]
+[gd_scene load_steps=20 format=3 uid="uid://cdfwii4l64gjt"]
 
 [ext_resource type="Script" uid="uid://bgje3chti36wa" path="res://Scripts/wall_1.gd" id="1_pmwcp"]
 [ext_resource type="PackedScene" uid="uid://dupbj03k0vldf" path="res://Player/player.tscn" id="1_xghsi"]
@@ -11,12 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://wm5mk6qo36d2" path="res://Assets/Clouds/Cloud2maybe.PNG" id="8_1xoxf"]
 [ext_resource type="PackedScene" uid="uid://s6ksod03hgdl" path="res://Scenes/camera_limiter.tscn" id="10_w4dla"]
 [ext_resource type="Texture2D" uid="uid://b7gnfaay178nk" path="res://Assets/animals/Bird.png" id="11_w4dla"]
-[ext_resource type="Texture2D" uid="uid://bowsr4e4nuhff" path="res://Assets/sun/Untitled_Artwork-1 6.png" id="12_8u6va"]
-[ext_resource type="Texture2D" uid="uid://0rdcy4fdcg48" path="res://Assets/Clouds/Cloud1.PNG" id="13_5hht5"]
-[ext_resource type="Texture2D" uid="uid://dwl2uh424jlsa" path="res://Assets/TreesAndFlowers/flower2.PNG" id="14_qeiia"]
-[ext_resource type="Texture2D" uid="uid://bgw7ypnqs5v8t" path="res://Assets/TreesAndFlowers/flower4.PNG" id="15_tmd2x"]
-[ext_resource type="Texture2D" uid="uid://b5qlildfc7el6" path="res://Assets/TreesAndFlowers/flower5.PNG" id="16_m2hpi"]
-[ext_resource type="Texture2D" uid="uid://dn3do8dhst743" path="res://Assets/animals/Untitled_Artwork-1 4.png" id="17_q6hs1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 distance = -542.0
@@ -291,10 +285,10 @@ position = Vector2(266, 277.25)
 shape = SubResource("RectangleShape2D_w4dla")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 770.0
-offset_top = -68.0
-offset_right = 1590.0
-offset_bottom = 118.0
+offset_left = 773.0
+offset_top = -152.0
+offset_right = 1593.0
+offset_bottom = 34.0
 theme_override_font_sizes/font_size = 136
 text = "SHELF LONG"
 horizontal_alignment = 1
@@ -306,37 +300,6 @@ position = Vector2(10, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Label/StaticBody2D"]
 position = Vector2(421, 102)
 shape = SubResource("RectangleShape2D_76c2s")
-
-[node name="UntitledArtwork16" type="Sprite2D" parent="."]
-position = Vector2(433, -489.00003)
-scale = Vector2(0.6862805, 0.6862805)
-texture = ExtResource("12_8u6va")
-
-[node name="Cloud1" type="Sprite2D" parent="."]
-position = Vector2(990, -479)
-scale = Vector2(0.25401607, 0.25401607)
-texture = ExtResource("13_5hht5")
-
-[node name="Flower2" type="Sprite2D" parent="."]
-position = Vector2(-116, 653)
-scale = Vector2(0.080182895, 0.0801829)
-texture = ExtResource("14_qeiia")
-
-[node name="Flower4" type="Sprite2D" parent="."]
-position = Vector2(-31, 658)
-scale = Vector2(0.07469514, 0.07469515)
-texture = ExtResource("15_tmd2x")
-
-[node name="Flower5" type="Sprite2D" parent="."]
-position = Vector2(100.00001, 655)
-scale = Vector2(0.07271343, 0.072713435)
-texture = ExtResource("16_m2hpi")
-
-[node name="UntitledArtwork14" type="Sprite2D" parent="."]
-position = Vector2(-217, 660)
-scale = Vector2(0.5109756, 0.48440573)
-texture = ExtResource("17_q6hs1")
-flip_h = true
 
 [editable path="CameraLimiters/CameraLimiter1"]
 [editable path="CameraLimiters/CameraLimiter2"]
